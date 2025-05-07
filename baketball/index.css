@@ -1,0 +1,59 @@
+@font-face {
+  font-family: Clock;
+  src: url("res/Technology-Bold.ttf");
+}
+@font-face {
+  font-family: Clock-Em;
+  src: url("res/Technology-BoldItalic.ttf");
+}
+
+body {
+  margin: 0;
+  background-color: #121212;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3 {
+  font-size: 4rem;
+}
+
+p {
+  font-family: Clock;
+  font-size: 10rem;
+  background-color: #121212;
+  color: red;
+  padding: 30px 60px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container {
+  background-color: #191e2e;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 0;
+  height: 100vh;
+}
+.container > div {
+  width: 20%;
+  text-align: center;
+  margin: 0;
+}
+
+.score-btn {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
+
+.score-btn button {
+  background-color: inherit;
+  border: 3px solid #fff;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 3em;
+  font-weight: bold;
+}
