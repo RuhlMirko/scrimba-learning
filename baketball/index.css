@@ -10,7 +10,7 @@
 body {
   margin: 0;
   background-color: #121212;
-  color: #fff;
+  color: #121212;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -23,13 +23,14 @@ p {
   font-size: 10rem;
   background-color: #121212;
   color: red;
+  text-shadow: 8px 8px 5px rgba(255, 47, 47, 0.336);
   padding: 30px 60px;
   border-radius: 10px;
   text-align: center;
 }
 
 .container {
-  background-color: #191e2e;
+  background-color: #7e9cff;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -40,6 +41,10 @@ p {
   width: 20%;
   text-align: center;
   margin: 0;
+  background-color: #ecdacc54;
+  padding: 20px 60px;
+  border-radius: 5px;
+  backdrop-filter: blur(25px);
 }
 
 .score-btn {
@@ -48,21 +53,31 @@ p {
   margin: 0;
 }
 
-.score-btn button {
+button {
   background-color: inherit;
-  border: 3px solid #fff;
+  border: 3px solid #121212;
   padding: 0.2em 0.5em;
   border-radius: 5px;
-  color: #fff;
+  color: #121212;
   font-size: 3em;
   font-weight: bold;
 }
 
 .leading {
   color: greenyellow;
+  text-shadow: 8px 8px 5px rgba(172, 255, 47, 0.336);
 }
 .losing {
   color: red;
+  text-shadow: 8px 8px 5px rgba(255, 47, 47, 0.336);
+}
+
+#new-game-btn {
+  text-align: center;
+  display: block;
+  margin: 40px auto;
+  color: #7e9cff;
+  border-color: #7e9cff;
 }
 
 footer {

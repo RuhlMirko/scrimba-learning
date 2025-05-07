@@ -22,10 +22,6 @@ function addGuest(points) {
 let maxCount = 0;
 
 function checkLeader() {
-  /*
-  homeEl.classList.remove("leading", "losing");
-  guestEl.classList.remove("leading", "losing");
-  */
   if (homeCount >= maxCount) {
     guestEl.classList.remove("leading");
     guestEl.classList.add("losing");
@@ -45,4 +41,13 @@ function checkLeader() {
     guestEl.classList.remove("losing");
   }
   console.log(homeCount, guestCount, maxCount);
+}
+
+function newGame() {
+  homeCount = 0;
+  guestCount = 0;
+  homeEl.textContent = homeCount;
+  guestEl.textContent = guestCount;
+  homeEl.classList.remove("leading", "losing");
+  guestEl.classList.remove("leading", "losing");
 }
