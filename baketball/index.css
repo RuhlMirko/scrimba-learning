@@ -58,6 +58,13 @@ p {
   font-weight: bold;
 }
 
+.leading {
+  color: greenyellow;
+}
+.losing {
+  color: red;
+}
+
 footer {
   height: 10vh;
   height: 10vh;
