@@ -1,0 +1,25 @@
+body {
+  background: #121212;
+  color: #ddd;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20vh;
+  font-size: 1.5rem;
+}
+
+li a {
+  color: #9370a5;
+  font-size: 1.2em;
+}
+
+.fancy-hover {
+  & > li {
+    transition: opacity 0.2s linear;
+  }
+  &:hover > li:not(:hover) {
+    opacity: 0.4;
+  }
+}
