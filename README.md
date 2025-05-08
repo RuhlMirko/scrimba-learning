@@ -52,3 +52,10 @@ This website was made to how to use mouse hover effects and using gifs on a webs
 <br>
 <br>
 <img src="res/images/gifts.png" height="250px">
+
+### BlackJack
+
+In this website you play blackjack solo, you win by reaching exactly 21 points in cards, this website is a game of blackjack with no dealer to compete against.
+<br>
+<br>
+<img src="res/images/blackjack.png" height="250px">
