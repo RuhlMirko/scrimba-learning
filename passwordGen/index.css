@@ -12,16 +12,42 @@ main {
   border-radius: 20px;
   margin: 20px;
   padding: 10%;
+  font-size: 2em;
 }
 span {
   color: #34d399;
 }
-button {
-  width: 200px;
-  background-color: #273549;
-  border: none;
-  color: #f3f4f6;
+p {
+  font-size: 1em;
 }
+
 hr {
   background-color: #273549;
+  height: 4px;
+  border: none;
+  border-radius: 5px;
+}
+
+button,
+#generator input {
+  width: 40%;
+  background-color: #04a56a;
+  color: #f3f4f6;
+  border: none;
+
+  font-size: 1em;
+  padding: 12px 24px;
+  border-radius: 5px;
+}
+
+#generator {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+#generator input {
+  width: 48%;
+  background-color: #273549;
+  text-align: center;
 }
