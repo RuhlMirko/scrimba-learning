@@ -60,3 +60,14 @@ button {
   text-align: center;
   color: #34d399;
 }
+
+footer {
+  text-align: center;
+  height: 10vh;
+  padding: 20px;
+}
+footer a {
+  font-size: 2em;
+  color: #04a56a;
+  font-style: italic;
+}
