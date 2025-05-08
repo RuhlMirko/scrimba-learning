@@ -86,8 +86,15 @@ const symbols = [
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const allChars = [characters, symbols, numbers];
 
+const passEl = document.getElementById("passLength");
+
 function genPasswords() {
-  let passLength = 15;
+  let passLength = Number(passEl.value);
+  console.log(passLength);
+  if (isNaN(passLength)) {
+    passLength = 15;
+    passEl.value = 15;
+  }
   let passStr1 = "";
   let passStr2 = "";
   for (let i = 0; i < passLength; i++) {
