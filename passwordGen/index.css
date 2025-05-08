@@ -11,7 +11,7 @@ main {
   color: #f3f4f6;
   border-radius: 20px;
   margin: 20px;
-  padding: 10%;
+  padding: 5%;
   font-size: 2em;
 }
 span {
@@ -26,11 +26,11 @@ hr {
   height: 4px;
   border: none;
   border-radius: 5px;
+  margin: 60px 0;
 }
 
-button,
-#generator input {
-  width: 40%;
+button {
+  width: 48%;
   background-color: #04a56a;
   color: #f3f4f6;
   border: none;
@@ -38,6 +38,8 @@ button,
   font-size: 1em;
   padding: 12px 24px;
   border-radius: 5px;
+  margin-top: 12px;
+  height: 80px;
 }
 
 #generator {
@@ -46,8 +48,15 @@ button,
   margin: 0 20px;
 }
 
-#generator input {
+.primary-input {
+  display: block;
+  margin: 8px 0;
+  border: none;
+  font-size: 1em;
+  padding: 12px 24px;
+  border-radius: 5px;
   width: 48%;
   background-color: #273549;
   text-align: center;
+  color: #34d399;
 }

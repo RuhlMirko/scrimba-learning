@@ -6,14 +6,24 @@
     <main>
       <h1>Generate a <br /><span>random password</span></h1>
       <p>Never use an insecure password again.</p>
-
-      <button>Generate Password</button>
+      <input class="primary-input" type="text" placeholder="Password Length" />
+      <button onclick="genPasswords()">Generate Password</button>
 
       <hr />
 
       <div id="generator">
-        <input type="text" value="random password" />
-        <input type="text" value="random password 2" />
+        <input
+          class="primary-input"
+          type="text"
+          placeholder="first password"
+          id="pass1"
+        />
+        <input
+          class="primary-input"
+          type="text"
+          placeholder="second password"
+          id="pass2"
+        />
       </div>
     </main>
 
