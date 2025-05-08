@@ -1,29 +1,50 @@
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', Arial, sans-serif;
-    background-image: url("images/table.png");
-    background-size: cover;
-    font-weight: bold;
-    color: white;
-    text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", Arial,
+    sans-serif;
+  background-image: url("images/table.png");
+  background-size: cover;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-size: 2rem;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
 }
 
 h1 {
-    color: goldenrod;
+  color: goldenrod;
 }
 
 #message-el {
-    font-style: italic;
+  font-style: italic;
 }
 
 button {
-    color: #016f32;
-    width: 150px;
-    background: goldenrod;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-weight: bold;
-    border: none;
-    border-radius: 2px;
-    margin-bottom: 2px;
-    margin-top: 2px;
+  display: block;
+  margin: 0 auto;
+  color: #121212;
+  width: 20%;
+  height: 10%;
+  background: goldenrod;
+  box-shadow: 0.7rem 1rem 0.5rem rgba(0, 0, 0, 0.493);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  font-size: 1em;
+}
+
+footer {
+  height: 20vh;
+  background-color: #121212;
+  margin: 0;
 }
