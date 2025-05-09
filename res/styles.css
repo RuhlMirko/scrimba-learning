@@ -8,6 +8,7 @@ body {
   align-items: center;
   margin-top: 20vh;
   font-size: 1.5rem;
+  margin-bottom: 0;
 }
 
 li a {
@@ -22,4 +23,20 @@ li a {
   &:hover > li:not(:hover) {
     opacity: 0.4;
   }
+}
+
+footer {
+  box-sizing: border-box;
+  background-color: #0f0f0f;
+  height: 20vh;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  margin: 0;
+  padding-top: 60px;
+}
+
+footer a {
+  color: #4871e2;
+  font-style: italic;
 }
