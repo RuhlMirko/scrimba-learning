@@ -49,13 +49,16 @@ main {
   height: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 1.5rem;
 }
 main div {
   background-color: #273549;
-  margin: 20px 20px;
+  margin: 40px 60px;
   padding: 10px 0;
   text-align: center;
   border-radius: 5px;
+}
+main div p {
+  color: white;
 }
