@@ -62,3 +62,16 @@ main div {
 main div p {
   color: white;
 }
+footer {
+  height: 6vh;
+  background-color: #121212;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  margin-top: 60px;
+}
+footer a {
+  color: #6943ff;
+  font-style: italic;
+  font-size: 2rem;
+}
