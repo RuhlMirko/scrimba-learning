@@ -20,12 +20,35 @@ function convert() {
     resultPounds,
     resultKgs
   );
+  render();
 }
 
 function render() {
-  let completeStr = "";
-  for (let i in results) {
-  }
+  let inner = `
+    <div>
+        <h2>Length (Meter/Feet)</h2>
+        <p>
+        ${userInp.value} meters = ${results[0]} feet ||
+        ${userInp.value} feet = ${results[1]} meters
+        </p>
+    </div>
+    <div>
+        <h2>Volume (Liters/Gallons)</h2>
+        <p>        
+        ${userInp.value} liters = ${results[2]} gallons ||
+        ${userInp.value} gallons = ${results[3]} liters
+        </p>
+    </div>
+    <div>
+        <h2>Mass (Kilograms/Pounds)</h2>
+        <p>
+        ${userInp.value} kilos = ${results[4]} pounds ||
+        ${userInp.value} pounds = ${results[5]} kilos
+        </p>
+    </div> 
+    `;
+
+  document.getElementById("result").innerHTML = inner;
 }
 
 const convertBtn = document.getElementById("convert-btn");
