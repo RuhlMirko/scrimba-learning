@@ -1,15 +1,80 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <main>
-            <p class="red">Contrast ratio: 3.32</p>
-            <p class="orange">Contrast ratio: 6.72</p>
-            <p class="yellow">Contrast ratio: 12.37</p>
-            <p class="green">Contrast ratio: 3.57</p>
-            <p class="blue">Contrast ratio: 1.54</p>
-            <p class="purple">Contrast ratio: 1.41</p>
-        </main>
-    </body>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <p class="red">Contrast ratio: 3.32</p>
+      <p class="orange">Contrast ratio: 6.72</p>
+      <p class="yellow">Contrast ratio: 12.37</p>
+      <p class="green">Contrast ratio: 3.57</p>
+      <p class="blue">Contrast ratio: 1.54</p>
+      <p class="purple">Contrast ratio: 1.41</p>
+    </main>
+    <svg
+      viewBox="0 0 1440 320"
+      xmlns="http://www.w3.org/2000/svg"
+      style="width: 100%; height: auto"
+    >
+      <defs>
+        <linearGradient id="waveGradient" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#0099ff" />
+          <stop offset="100%" stop-color="#66ccff" />
+        </linearGradient>
+      </defs>
+
+      <g>
+        <path fill="url(#waveGradient)" fill-opacity="0.6">
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            from="0,0"
+            to="60,0"
+            dur="10s"
+            repeatCount="indefinite"
+          />
+          <animateTransform
+            attributeName="transform"
+            additive="sum"
+            attributeType="XML"
+            type="translate"
+            from="0,0"
+            to="-60,0"
+            dur="10s"
+            begin="5s"
+            repeatCount="indefinite"
+          />
+          <animateTransform
+            attributeName="transform"
+            additive="sum"
+            attributeType="XML"
+            type="translate"
+            from="0,0"
+            to="0,0"
+            dur="10s"
+            begin="0s"
+          />
+          <path
+            d="M0,64L48,85.3C96,107,192,149,288,170.7C384,192,480,192,576,181.3C672,171,768,149,864,165.3C960,181,1056,235,1152,229.3C1248,224,1344,160,1392,128L1440,96V320H0Z"
+          ></path>
+        </path>
+
+        <path fill="#0099ff" fill-opacity="1">
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            from="0,0"
+            to="-40,0"
+            dur="8s"
+            repeatCount="indefinite"
+          />
+          <path
+            d="M0,32L48,74.7C96,117,192,203,288,218.7C384,235,480,181,576,165.3C672,149,768,171,864,181.3C960,192,1056,192,1152,170.7C1248,149,1344,107,1392,85.3L1440,64L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+        </path>
+      </g>
+    </svg>
+  </body>
 </html>

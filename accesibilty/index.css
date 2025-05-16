@@ -39,6 +39,7 @@ main {
 .purple {
   background-color: #800080;
   color: #fff;
+  background-blend-mode: lighten;
 }
 
 /*
