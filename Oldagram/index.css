@@ -12,7 +12,6 @@ img {
   width: 500px;
 }
 .container {
-  border: 2px solid black;
   margin: 20px;
   background-color: #fff;
   width: 500px;
@@ -39,8 +38,8 @@ nav {
   gap: 10px;
   padding: 10px 20px;
 }
-.user-info h3,
-.user-info h2 {
+h3,
+h2 {
   margin: 0;
   padding: 0;
 }
@@ -54,4 +53,15 @@ nav {
 p {
   padding: 0 20px;
   margin-top: 0;
+}
+#buttons {
+  padding: 10px 20px;
+  margin: 0;
+}
+#buttons {
+  display: flex;
+  gap: 10px;
+}
+#buttons svg:hover {
+  fill: pink;
 }
