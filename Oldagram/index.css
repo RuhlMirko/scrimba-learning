@@ -62,8 +62,11 @@ p {
   display: flex;
   gap: 10px;
 }
-#buttons svg:hover {
-  fill: pink;
+#buttons img {
+  width: 30px;
+}
+#buttons img:hover {
+  opacity: 0.5;
 }
 footer {
   background-color: #121212;
