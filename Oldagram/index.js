@@ -35,10 +35,18 @@ let postHtml = "";
 for (let i in posts) {
   const curr = posts[i];
   postHtml += `
-  <div class="container">
-    <h2>${curr.name}</h2>
-    <h3>${curr.location}</h3>
+  <div class="container">    
+    <div class="user-info white-space">
+        <img src="${curr.avatar}" class="avatar">        
+        <div>
+            <h2>${curr.name}</h2>
+            <h3>${curr.location}</h3>
+        </div>
+    </div>
+
+    
     <img src="${curr.post}">
+    <h3 class="likes">${curr.likes} likes</h3>
     <p><strong>${curr.username}</strong> ${curr.comment}</p>
   </div>  
   `;

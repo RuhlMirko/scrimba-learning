@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #cecece;
+  background-color: #f0eeee;
 }
 img {
   width: 500px;
@@ -18,7 +18,7 @@ img {
   width: 500px;
 }
 .avatar {
-  width: 70px;
+  width: 50px;
   border-radius: 50%;
 }
 nav {
@@ -32,4 +32,26 @@ nav {
 }
 #logo {
   width: 200px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+.user-info h3,
+.user-info h2 {
+  margin: 0;
+  padding: 0;
+}
+.user-info h3 {
+  font-weight: 400;
+}
+.likes {
+  padding: 0 20px;
+  margin-bottom: 0;
+}
+p {
+  padding: 0 20px;
+  margin-top: 0;
 }
