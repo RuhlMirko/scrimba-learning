@@ -65,3 +65,13 @@ p {
 #buttons svg:hover {
   fill: pink;
 }
+footer {
+  background-color: #121212;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 40px;
+}
+footer a {
+  color: aqua;
+  font-style: italic;
+}
