@@ -35,7 +35,6 @@ p {
   justify-content: space-around;
   align-items: center;
   margin-bottom: 0;
-  height: 100vh;
 }
 .container > div {
   width: 20%;
@@ -109,11 +108,16 @@ footer a {
     align-items: center;
     gap: 5px;
   }
-  .score-btn {
-    display: flex;
-    flex-direction: row;
-  }
   #timer {
     font-size: 4rem;
+  }
+  #home-score,
+  #guest-score,
+  #timer {
+    margin: 0;
+    width: 200px;
+  }
+  footer a {
+    font-size: 2rem;
   }
 }
