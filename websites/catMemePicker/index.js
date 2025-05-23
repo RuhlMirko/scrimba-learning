@@ -49,10 +49,8 @@ function getSingleCatObject() {
 }
 
 function getMatchingCatsArray() {
-  if (document.querySelector('input[type="radio"]:checked')) {
-    const selectedEmotion = document.querySelector(
-      'input[type="radio"]:checked'
-    ).value;
+  if (document.querySelector("select")) {
+    const selectedEmotion = document.querySelector("select").value;
     const isGif = gifsOnlyOption.checked;
 
     const matchingCatsArray = catsData.filter(function (cat) {
