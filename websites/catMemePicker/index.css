@@ -103,11 +103,19 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-.gifs-check {
+.checkbox-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  margin: 16px;
+}
+
+.check {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 16px;
 }
 
 .gifs-check-label {

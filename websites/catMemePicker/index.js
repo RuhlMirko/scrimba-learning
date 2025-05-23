@@ -7,19 +7,8 @@ const memeModalInner = document.getElementById("meme-modal-inner");
 const memeModal = document.getElementById("meme-modal");
 const memeModalCloseBtn = document.getElementById("meme-modal-close-btn");
 
-emotionRadios.addEventListener("change", highlightCheckedOption);
-
 memeModalCloseBtn.addEventListener("click", closeModal);
-
 getImageBtn.addEventListener("click", renderCat);
-
-function highlightCheckedOption(e) {
-  const radios = document.getElementsByClassName("radio");
-  for (let radio of radios) {
-    radio.classList.remove("highlight");
-  }
-  document.getElementById(e.target.id).parentElement.classList.add("highlight");
-}
 
 function closeModal() {
   memeModal.style.display = "none";
@@ -79,10 +68,12 @@ function getEmotionsArray(cats) {
 function renderEmotionsRadios(cats) {
   let finalHtml = `<select class="radio">`;
   let emotionItems = "";
+
   const emotions = getEmotionsArray(cats);
   for (let emotion of emotions) {
     emotionItems += `<option value='${emotion}'>${emotion}</option>`;
   }
+
   finalHtml += `${emotionItems}</select>`;
   emotionRadios.innerHTML = finalHtml;
 }

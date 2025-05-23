@@ -23,12 +23,23 @@
       <h3>Select Your Current Emotion</h3>
       <div class="controls-container">
         <div class="emotion-radios" id="emotion-radios"></div>
-        <div class="gifs-check">
-          <label for="gifs-only-option" class="gifs-check-label"
-            >Animated GIFs only</label
-          >
-          <input type="checkbox" id="gifs-only-option" />
+
+        <div class="checkbox-div">
+          <div class="check">
+            <label for="gifs-only-option" class="gifs-check-label"
+              >Animated GIFs only</label
+            >
+            <input type="checkbox" id="gifs-only-option" />
+          </div>
+
+          <div class="check">
+            <label for="one-only-option" class="gifs-check-label"
+              >Only one image</label
+            >
+            <input type="checkbox" id="one-only-option" checked />
+          </div>
         </div>
+
         <button class="get-image-btn" id="get-image-btn">Get Image</button>
       </div>
     </main>
