@@ -15,14 +15,32 @@ function closeModal() {
 }
 
 function renderCat() {
-  const catObject = getSingleCatObject();
-  memeModalInner.innerHTML = `
+  if (document.getElementById("one-only-option").checked) {
+    const catObject = getSingleCatObject();
+    memeModalInner.innerHTML = `
+    <img 
+    class="cat-img" 
+    src="./images/${catObject.image}"
+    alt="${catObject.alt}"
+    >
+    `;
+  } else {
+    const catObject = Array(getMoreCatObject());
+    let finalHtml = "";
+    console.log(catObject[0], catObject[0].length);
+    for (let i in catObject[0]) {
+      console.log(catObject[0][i]);
+      finalHtml += `
         <img 
         class="cat-img" 
-        src="./images/${catObject.image}"
-        alt="${catObject.alt}"
-        >
+        src="./images/${catObject[0][i].image}"
+        alt="${catObject[0][i].alt}"
+        >       
         `;
+    }
+    memeModalInner.innerHTML = finalHtml;
+  }
+
   memeModal.style.display = "flex";
 }
 
@@ -35,6 +53,11 @@ function getSingleCatObject() {
     const randomNumber = Math.floor(Math.random() * catsArray.length);
     return catsArray[randomNumber];
   }
+}
+
+function getMoreCatObject() {
+  const catsArray = getMatchingCatsArray();
+  return catsArray;
 }
 
 function getMatchingCatsArray() {
