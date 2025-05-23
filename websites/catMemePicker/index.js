@@ -79,22 +79,14 @@ function getEmotionsArray(cats) {
 }
 
 function renderEmotionsRadios(cats) {
-  let radioItems = ``;
+  let finalHtml = `<select class="radio">`;
+  let emotionItems = "";
   const emotions = getEmotionsArray(cats);
   for (let emotion of emotions) {
-    radioItems += `
-        <select class="radio">
-            <label for="${emotion}">${emotion}</label>
-            <input
-            type="radio"
-            id="${emotion}"
-            value="${emotion}"
-            name="emotions"
-            >
-            <option></option>
-        </select>`;
+    emotionItems += `<option value='${emotion}'>${emotion}</option>`;
   }
-  emotionRadios.innerHTML = radioItems;
+  finalHtml += `${emotionItems}</select>`;
+  emotionRadios.innerHTML = finalHtml;
 }
 
 renderEmotionsRadios(catsData);
