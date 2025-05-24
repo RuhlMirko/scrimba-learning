@@ -11,6 +11,8 @@ body {
 
 .avatar {
   width: 20%;
+  min-width: 200px;
+  max-height: 200px;
   border-radius: 10px;
 }
 
