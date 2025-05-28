@@ -6,6 +6,11 @@
 import { tweetsData } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
+function setToLocal() {
+  localStorage.setItem("tweetsData", JSON.stringify(tweetsData));
+  console.log(JSON.parse(localStorage.getItem("tweetsData")));
+}
+
 document.addEventListener("click", function (e) {
   if (e.target.dataset.like) {
     handleLikeClick(e.target.dataset.like);
@@ -67,6 +72,7 @@ function handleTweetBtnClick() {
     });
     render();
     tweetInput.value = "";
+    setToLocal();
   }
 }
 
@@ -143,6 +149,7 @@ function getFeedHtml() {
 }
 
 function render() {
+  setToLocal();
   document.getElementById("feed").innerHTML = getFeedHtml();
 }
 
