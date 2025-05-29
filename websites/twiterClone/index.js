@@ -1,6 +1,3 @@
-// #TODO: add the ability to reply to a specific tweet,
-// Customize
-
 import { tweetsData as SEED_TWEETS } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 

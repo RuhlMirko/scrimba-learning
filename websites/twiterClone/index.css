@@ -177,3 +177,16 @@ button {
 .hidden {
   display: none;
 }
+
+footer {
+  background-color: #121212;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0 40px;
+  margin-top: 40px;
+}
+footer a {
+  color: #1da1f2;
+  font-size: 1.3rem;
+  font-style: italic;
+}
