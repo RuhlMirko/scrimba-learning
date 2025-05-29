@@ -4,12 +4,6 @@
 import { tweetsData as SEED_TWEETS } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
-/*
-function setToLocal() {
-  localStorage.setItem("tweetsData", JSON.stringify(tweetsData));
-  console.log(JSON.parse(localStorage.getItem("tweetsData")));
-}
-*/
 const STORAGE_KEY = "tweetsData";
 let tweetsData;
 
@@ -37,6 +31,8 @@ document.addEventListener("click", function (e) {
     handleReplyClick(e.target.dataset.reply);
   } else if (e.target.dataset.delete) {
     deleteTweet(e.target.dataset.delete);
+  } else if (e.target.dataset.replymsg) {
+    addReply(e.target.dataset.replymsg);
   } else if (e.target.id === "tweet-btn") {
     handleTweetBtnClick();
   }
@@ -103,6 +99,26 @@ function handleRetweetClick(tweetId) {
 
 function handleReplyClick(replyId) {
   document.getElementById(`replies-${replyId}`).classList.toggle("hidden");
+}
+
+function addReply(id) {
+  const userReplyMsg = document.getElementById(`replymsg-${id}`).value;
+  if (userReplyMsg) {
+    const targetTweetObj = tweetsData.filter(function (tweet) {
+      return tweet.uuid === id;
+    })[0];
+
+    const newReply = {
+      handle: "@Scrimba",
+      profilePic: `images/scrimbalogo.png`,
+      tweetText: userReplyMsg,
+    };
+    // {handle: '@TomCruise ✅', profilePic: 'images/tcruise.png', tweetText: 'Yes! Sign me up! 😎🛩'}
+    targetTweetObj.replies.push(newReply);
+    console.log(targetTweetObj);
+    handleReplyClick(id);
+    render();
+  }
 }
 
 function getFeedHtml() {
@@ -185,8 +201,8 @@ function getFeedHtml() {
             ${repliesHtml}
         </div>
         <div class='reply-box'>
-            <textarea></textarea>
-            <button>Reply</button>
+            <textarea id='replymsg-${tweet.uuid}'></textarea>
+            <button data-replymsg="${tweet.uuid}">Reply</button>
         </div>
     </div>
     `;
