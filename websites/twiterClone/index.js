@@ -3,12 +3,31 @@
 // Allow a user to delete a tweet
 // Customize
 
-import { tweetsData } from "./data.js";
+import { tweetsData as SEED_TWEETS } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
+/*
 function setToLocal() {
   localStorage.setItem("tweetsData", JSON.stringify(tweetsData));
   console.log(JSON.parse(localStorage.getItem("tweetsData")));
+}
+*/
+const STORAGE_KEY = "tweetsData";
+let tweetsData;
+
+try {
+  // null -> first run OR someone cleared the key
+  tweetsData =
+    JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? SEED_TWEETS.slice();
+
+  // If this is the first run, persist the seed so re-load won’t reset it
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(tweetsData));
+  }
+} catch (err) {
+  console.warn("Corrupt data in localStorage — starting fresh.", err);
+  tweetsData = SEED_TWEETS.slice();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tweetsData));
 }
 
 document.addEventListener("click", function (e) {
@@ -22,6 +41,35 @@ document.addEventListener("click", function (e) {
     handleTweetBtnClick();
   }
 });
+
+function handleTweetBtnClick() {
+  const tweetInput = document.getElementById("tweet-input");
+
+  if (tweetInput.value) {
+    tweetsData.unshift({
+      handle: `@Scrimba`,
+      profilePic: `images/scrimbalogo.png`,
+      likes: 0,
+      retweets: 0,
+      tweetText: tweetInput.value,
+      replies: [],
+      isLiked: false,
+      isRetweeted: false,
+      uuid: uuidv4(),
+    });
+    saveTweets();
+    render();
+    tweetInput.value = "";
+  }
+}
+
+function saveTweets() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(tweetsData));
+}
+function deleteTweet(uuid) {
+  tweetsData = tweetsData.filter((t) => t.uuid !== uuid);
+  saveTweets();
+}
 
 function handleLikeClick(tweetId) {
   const targetTweetObj = tweetsData.filter(function (tweet) {
@@ -53,27 +101,6 @@ function handleRetweetClick(tweetId) {
 
 function handleReplyClick(replyId) {
   document.getElementById(`replies-${replyId}`).classList.toggle("hidden");
-}
-
-function handleTweetBtnClick() {
-  const tweetInput = document.getElementById("tweet-input");
-
-  if (tweetInput.value) {
-    tweetsData.unshift({
-      handle: `@Scrimba`,
-      profilePic: `images/scrimbalogo.png`,
-      likes: 0,
-      retweets: 0,
-      tweetText: tweetInput.value,
-      replies: [],
-      isLiked: false,
-      isRetweeted: false,
-      uuid: uuidv4(),
-    });
-    render();
-    tweetInput.value = "";
-    setToLocal();
-  }
 }
 
 function getFeedHtml() {
@@ -149,7 +176,6 @@ function getFeedHtml() {
 }
 
 function render() {
-  setToLocal();
   document.getElementById("feed").innerHTML = getFeedHtml();
 }
 
