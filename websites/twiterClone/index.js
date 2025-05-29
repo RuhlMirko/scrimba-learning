@@ -1,5 +1,4 @@
 // #TODO: add the ability to reply to a specific tweet,
-// Allow a user to delete a tweet
 // Customize
 
 import { tweetsData as SEED_TWEETS } from "./data.js";
@@ -168,20 +167,27 @@ function getFeedHtml() {
                     </span>`;
     if (tweet.isMine) {
       feedHtml += `
-        <span class="tweet-detail">            
-            <i class="fa-solid fa-trash" 
-            data-delete="${tweet.uuid}"
-            ></i>
-        </span>
-        `;
+                        <span class="tweet-detail">            
+                            <i class="fa-solid fa-trash" 
+                            data-delete="${tweet.uuid}"
+                            ></i>
+                        </span>
+                        `;
     }
     feedHtml += `
                 </div>   
-            </div>            
+            </div>
+            
+                        
         </div>
+        
         <div class="hidden" id="replies-${tweet.uuid}">
             ${repliesHtml}
-        </div>   
+        </div>
+        <div class='reply-box'>
+            <textarea></textarea>
+            <button>Reply</button>
+        </div>
     </div>
     `;
   });

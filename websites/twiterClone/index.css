@@ -48,6 +48,28 @@ i {
   background-color: rgb(49, 5, 5);
   color: red;
 }
+
+.reply-box {
+  width: 90%;
+  margin-left: auto;
+}
+.reply-box textarea {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border: 1px solid #55555594;
+  border-radius: 5px;
+}
+.reply-box button {
+  width: auto;
+  margin-top: 0;
+  background-color: inherit;
+  color: #555;
+  border: 2px solid #555;
+}
+.reply-box button:hover {
+  background-color: #555;
+  color: #fff;
+}
 /* layout */
 
 main,
