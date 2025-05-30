@@ -20,6 +20,7 @@ const websitesData = [
   "cookieConsent",
   "catMemePicker",
   "twiterClone",
+  "orderingApp",
 ];
 
 const websitesUl = document.getElementById("websites-ul");
