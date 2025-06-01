@@ -1,23 +1,58 @@
 const menuArray = [
-    {
-        name: "Pizza",
-        ingredients: ["pepperoni", "mushrom", "mozarella"],
-        id: 0,
-        price: 14,
-        emoji: "🍕"
-    },
-    {
-        name: "Hamburger",
-        ingredients: ["beef", "cheese", "lettuce"],
-        price: 12,
-        emoji: "🍔",
-        id: 1
-    },
-        {
-        name: "Beer",
-        ingredients: ["grain, hops, yeast, water"],
-        price: 12,
-        emoji: "🍺",
-        id: 2
-    }
-]
+  {
+    name: "Patria Arg gloves",
+    category: "gloves",
+    ingredients: ["pepperoni", "mushrom", "mozarella"],
+    id: 0,
+    price: 77.5,
+    image: "./products",
+  },
+  {
+    name: "Triple campeon gloves",
+    category: "gloves",
+    ingredients: ["beef", "cheese", "lettuce"],
+    price: 77.5,
+    image: "./products",
+    id: 1,
+  },
+  {
+    name: "Pixel gloves",
+    category: "gloves",
+    ingredients: ["grain, hops, yeast, water"],
+    price: 42.3,
+    image: "./products",
+    id: 2,
+  },
+  {
+    name: "Blue shin guard",
+    category: "shin guard",
+    ingredients: ["grain, hops, yeast, water"],
+    price: 42.3,
+    image: "./products",
+    id: 3,
+  },
+  {
+    name: "Sock shin guard",
+    category: "shin guard",
+    ingredients: ["grain, hops, yeast, water"],
+    price: 42.3,
+    image: "./products",
+    id: 3,
+  },
+  {
+    name: "Boxing head gear face saver",
+    category: "headgear",
+    ingredients: ["grain, hops, yeast, water"],
+    price: 42.3,
+    image: "./products",
+    id: 4,
+  },
+  {
+    name: "Boxing Full head gear",
+    category: "headgear",
+    ingredients: ["grain, hops, yeast, water"],
+    price: 42.3,
+    image: "./products",
+    id: 5,
+  },
+];
