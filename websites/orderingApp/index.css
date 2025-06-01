@@ -1,3 +1,39 @@
 body {
-    margin: 0;
-} 
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+nav {
+  padding: 10px 40px;
+  background-color: rgb(88, 43, 43);
+  color: white;
+}
+
+main {
+  padding: 10px 30px;
+}
+
+#items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.product {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 10px 12px;
+  transition: 0.2s;
+  margin-bottom: 8px;
+}
+.product:hover {
+  box-shadow: 5px 5px 0.5rem rgba(83, 83, 83, 0.438);
+  transform: translateY(1.1%);
+}
+.product img {
+  width: 200px;
+}
