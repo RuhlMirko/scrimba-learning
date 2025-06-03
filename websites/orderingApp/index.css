@@ -37,3 +37,14 @@ main {
 .product img {
   width: 200px;
 }
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Optional: vertical alignment */
+}
+
+.item-desc {
+  display: flex;
+  gap: 10px; /* Optional: spacing between first and second */
+}
