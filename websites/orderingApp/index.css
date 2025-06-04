@@ -62,7 +62,17 @@ main {
 .item {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Optional: vertical alignment */
+  align-items: center;
+  max-width: 800px; /* Optional: vertical alignment */
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+.item button {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #0000009a;
+  font-weight: 700;
 }
 
 .item-desc {

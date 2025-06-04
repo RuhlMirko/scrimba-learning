@@ -37,7 +37,7 @@ export const itemsArray = [
     tags: ["grain, hops, yeast, water"],
     price: 22.8,
     image: "./products/socks.webp",
-    id: 3,
+    id: 4,
   },
   {
     name: "Boxing head gear face saver",
@@ -45,7 +45,7 @@ export const itemsArray = [
     tags: ["grain, hops, yeast, water"],
     price: 98,
     image: "./products/cabezal.webp",
-    id: 4,
+    id: 5,
   },
   {
     name: "Boxing Full head gear",
@@ -53,7 +53,7 @@ export const itemsArray = [
     tags: ["grain, hops, yeast, water"],
     price: 98,
     image: "./products/cabezalFull.webp",
-    id: 5,
+    id: 6,
   },
 ];
 
