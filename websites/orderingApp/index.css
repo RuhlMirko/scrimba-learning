@@ -11,6 +11,7 @@ nav {
   padding: 10px 40px;
   background-color: rgb(88, 43, 43);
   color: white;
+  margin-bottom: 10px;
 }
 
 main {
@@ -29,6 +30,7 @@ main {
   padding: 10px 12px;
   transition: 0.2s;
   margin-bottom: 8px;
+  text-align: center;
 }
 .product:hover {
   box-shadow: 5px 5px 0.5rem rgba(83, 83, 83, 0.438);
@@ -36,6 +38,9 @@ main {
 }
 .product img {
   width: 200px;
+}
+.product p {
+  font-size: 1.4rem;
 }
 
 .item {
@@ -47,4 +52,8 @@ main {
 .item-desc {
   display: flex;
   gap: 10px; /* Optional: spacing between first and second */
+}
+
+#modal {
+  display: none;
 }

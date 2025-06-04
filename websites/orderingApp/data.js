@@ -1,4 +1,4 @@
-const menuArray = [
+export const itemsArray = [
   {
     name: "Patria Arg gloves",
     category: "gloves",
@@ -56,3 +56,5 @@ const menuArray = [
     id: 5,
   },
 ];
+
+export default itemsArray;
