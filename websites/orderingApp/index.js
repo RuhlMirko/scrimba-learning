@@ -8,6 +8,7 @@ for (let i of itemsArray) {
         <img src="${i.image}" alt="" />
         <p>${i.name}</p>
         <h3>USD $${i.price}</h3>
+        <button>Add to cart</button>
     </div>
 `;
 }

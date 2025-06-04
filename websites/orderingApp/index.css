@@ -41,6 +41,22 @@ main {
 }
 .product p {
   font-size: 1.4rem;
+  line-height: 8px;
+  margin: 0;
+  margin-top: 14px;
+}
+.product button {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: #1f6d10;
+  border-radius: 5px;
+}
+.product button:hover {
+  background-color: rgb(0, 255, 85);
+  color: black;
+  cursor: pointer;
 }
 
 .item {
