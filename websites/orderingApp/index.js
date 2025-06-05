@@ -2,6 +2,9 @@ import { itemsArray } from "./data.js";
 const itemsEL = document.getElementById("items");
 const checkoutEL = document.getElementById("checkout");
 
+const cartItems = [];
+let totalUSD = 0;
+
 function renderProducts() {
   let strHtml = "";
   for (let i of itemsArray) {
@@ -27,15 +30,28 @@ const addToCart = function (id) {
   const targetObj = itemsArray.filter(function (item) {
     return item.id == id;
   })[0];
-  checkoutEL.innerHTML += `
-    <div class="item">
-        <div class="item-desc">
-        <div>${targetObj.name}</div>
-        <button>remove</button>
-        </div>
-        <div>USD $${targetObj.price}</div>
+  cartItems.push(`<div class="item">
+    <div class="item-desc"><div>${targetObj.name}</div><button>remove</button></div>
+    <div>USD $${targetObj.price}</div>
     </div>
-  `;
+  `);
+  totalUSD += targetObj.price;
+  renderCheckout();
 };
+
+const renderCheckout = function () {
+  console.log(cartItems);
+  let strHtml = "";
+  for (let i of cartItems) {
+    strHtml += i;
+  }
+  checkoutEL.innerHTML =
+    strHtml +
+    `<hr> <p class='item'>Total: USD $${Math.round(totalUSD * 100) / 100}<p>`;
+  //Math.round(totalUSD * 100) / 100
+};
+
+const deleteItem = function () {};
+//tweetsData = tweetsData.filter((t) => t.uuid !== uuid);
 
 renderProducts();
