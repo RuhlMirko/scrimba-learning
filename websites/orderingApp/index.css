@@ -59,6 +59,14 @@ main {
   cursor: pointer;
 }
 
+#checkout {
+  margin-top: 10px;
+}
+
+#checkout hr {
+  max-width: 780px;
+}
+
 .item {
   display: flex;
   justify-content: space-between;
@@ -67,6 +75,7 @@ main {
   margin: 0 auto;
   font-size: 1.5rem;
 }
+
 .item button {
   border: none;
   border-radius: 5px;
