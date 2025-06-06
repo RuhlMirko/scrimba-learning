@@ -31,7 +31,7 @@ const addToCart = function (id) {
     return item.id == id;
   })[0];
   cartItems.push(`<div class="item">
-    <div class="item-desc"><div>${targetObj.name}</div><button>remove</button></div>
+    <div class="item-desc"><div>${targetObj.name}</div><button class='remove-btn'>remove</button></div>
     <div>USD $${targetObj.price}</div>
     </div>
   `);
@@ -47,7 +47,14 @@ const renderCheckout = function () {
   }
   checkoutEL.innerHTML =
     strHtml +
-    `<hr> <p class='item'>Total: USD $${Math.round(totalUSD * 100) / 100}<p>`;
+    `
+    <div class='total-container'>
+      <hr>
+      <p>Total: USD $${Math.round(totalUSD * 100) / 100}<p>
+      <button class='checkout-btn'>Complete Order</button>    
+    <div>
+    ` +
+    "";
   //Math.round(totalUSD * 100) / 100
 };
 
