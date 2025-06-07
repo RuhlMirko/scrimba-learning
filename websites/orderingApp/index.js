@@ -32,11 +32,12 @@ const addToCart = function (id) {
   const targetObj = itemsArray.filter(function (item) {
     return item.id == id;
   })[0];
-  cartItems.push(`<div class="item">
-    <div class="item-desc"><div>${targetObj.name}</div><button class='remove-btn' data-delete='${targetObj.id}'>remove</button></div>
-    <div>USD $${targetObj.price}</div>
-    </div>
-  `);
+  // cartItems.push(`<div class="item">
+  //   <div class="item-desc"><div>${targetObj.name}</div><button class='remove-btn' data-delete='${targetObj.id}'>remove</button></div>
+  //   <div>USD $${targetObj.price}</div>
+  //   </div>
+  // `);
+  cartItems.push(targetObj);
   totalUSD += targetObj.price;
   renderCheckout();
 };
@@ -44,7 +45,10 @@ const addToCart = function (id) {
 const renderCheckout = function () {
   let strHtml = "";
   for (let i of cartItems) {
-    strHtml += i;
+    strHtml += `<div class="item">
+      <div class="item-desc"><div>${i.name}</div><button class='remove-btn' data-delete='${i.id}'>remove</button></div>
+      <div>USD $${i.price}</div>
+    </div>`;
   }
   checkoutEL.innerHTML =
     strHtml +
@@ -59,16 +63,8 @@ const renderCheckout = function () {
 
 const deleteItem = function (id) {
   console.log(`Delete function working with id: ${id}`);
-  //cartItems = cartItems.filter((item) => item.id !== id);
+  cartItems = cartItems.filter((item) => item.id !== Number(id));
 
-  cartItems.forEach((i, index) => {
-    // if (i.includes("data-delete='2'")) {
-    //   console.log("Found id in " + i);
-    // }
-    if (i.includes(`data-delete='${id}'`)) {
-      cartItems.splice(index, 1);
-    }
-  });
   renderCheckout();
 };
 //tweetsData = tweetsData.filter((t) => t.uuid !== uuid);
