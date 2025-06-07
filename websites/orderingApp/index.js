@@ -32,11 +32,6 @@ const addToCart = function (id) {
   const targetObj = itemsArray.filter(function (item) {
     return item.id == id;
   })[0];
-  // cartItems.push(`<div class="item">
-  //   <div class="item-desc"><div>${targetObj.name}</div><button class='remove-btn' data-delete='${targetObj.id}'>remove</button></div>
-  //   <div>USD $${targetObj.price}</div>
-  //   </div>
-  // `);
   cartItems.push(targetObj);
   totalUSD += targetObj.price;
   renderCheckout();
@@ -63,6 +58,11 @@ const renderCheckout = function () {
 
 const deleteItem = function (id) {
   console.log(`Delete function working with id: ${id}`);
+  cartItems.forEach((item) => {
+    if (item.id == id) {
+      totalUSD -= item.price;
+    }
+  });
   cartItems = cartItems.filter((item) => item.id !== Number(id));
 
   renderCheckout();
