@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap");
 body {
   margin: 0;
-  font-family: sans-serif;
+  font-family: "Teko", sans-serif;
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,8 +43,8 @@ main {
   width: 200px;
 }
 .product p {
-  font-size: 1.4rem;
-  line-height: 8px;
+  font-size: 1.6rem;
+  line-height: 12px;
   margin: 0;
   margin-top: 14px;
 }
@@ -104,6 +106,7 @@ main {
   cursor: pointer;
   color: #0000009a;
   font-weight: 700;
+  padding: 0 10px;
 }
 
 .item-desc {
