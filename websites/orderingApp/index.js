@@ -2,6 +2,8 @@ import { itemsArray } from "./data.js";
 const itemsEL = document.getElementById("items");
 const checkoutEL = document.getElementById("checkout");
 const modalEL = document.getElementById("modal");
+const bgDiv = document.getElementById("background");
+const modalTotal = document.getElementById("total");
 
 let cartItems = [];
 let totalUSD = 0;
@@ -27,9 +29,8 @@ document.addEventListener("click", function (e) {
   } else if (e.target.dataset.delete) {
     deleteItem(e.target.dataset.delete);
   } else if (e.target.id == "complete-order") {
-    renderModal(e.target.id);
+    renderModal();
   }
-  console.log(e);
 });
 
 const addToCart = function (id) {
@@ -71,10 +72,17 @@ const deleteItem = function (id) {
   renderCheckout();
 };
 
-const renderModal = function (id) {
-  console.log(id);
-  console.log(modalEL);
+const renderModal = function () {
+  bgDiv.classList.add("blur");
   modalEL.style.display = "flex";
+  // modalEL.innerHTML += `<h2>Total: USD $${totalUSD}</h2>`;
+  modalTotal.innerText = `Total: USD $${totalUSD}`;
+  document.addEventListener("click", function (e) {
+    if (e.target.id !== "complete-order") {
+      modalEL.style.display = "none";
+      bgDiv.classList.remove("blur");
+    }
+  });
 };
 
 renderProducts();

@@ -10,18 +10,25 @@
     </nav>
 
     <main>
-      <section id="items"></section>
+      <div id="background">
+        <section id="items"></section>
 
-      <section id="checkout">
-        <hr />
-      </section>
+        <section id="checkout">
+          <hr />
+        </section>
+      </div>
+
       <section id="modal">
         <h2>Enter card details</h2>
         <div class="input-fields">
-          <input type="text" placeholder="Enter your Name" />
-          <input type="text" placeholder="Enter card Number" />
-          <input type="text" placeholder="Enter CVV" />
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your Name" />
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" placeholder="Enter card Number" />
+          <label for="cvv">Security code</label>
+          <input type="text" id="cvv" placeholder="Enter CVV" />
         </div>
+        <h2 id="total"></h2>
         <button>Pay</button>
       </section>
     </main>
