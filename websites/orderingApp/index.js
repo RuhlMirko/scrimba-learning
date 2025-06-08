@@ -1,6 +1,7 @@
 import { itemsArray } from "./data.js";
 const itemsEL = document.getElementById("items");
 const checkoutEL = document.getElementById("checkout");
+const modalEL = document.getElementById("modal");
 
 let cartItems = [];
 let totalUSD = 0;
@@ -25,7 +26,10 @@ document.addEventListener("click", function (e) {
     addToCart(e.target.dataset.id);
   } else if (e.target.dataset.delete) {
     deleteItem(e.target.dataset.delete);
+  } else if (e.target.id == "complete-order") {
+    renderModal(e.target.id);
   }
+  console.log(e);
 });
 
 const addToCart = function (id) {
@@ -51,13 +55,12 @@ const renderCheckout = function () {
     <div class='total-container'>
       <hr>
       <p>Total: USD $${Math.round(totalUSD * 100) / 100}<p>
-      <button class='checkout-btn'>Complete Order</button>    
+      <button class='checkout-btn' id='complete-order'>Complete Order</button>    
     <div>
     `;
 };
 
 const deleteItem = function (id) {
-  console.log(`Delete function working with id: ${id}`);
   cartItems.forEach((item) => {
     if (item.id == id) {
       totalUSD -= item.price;
@@ -67,6 +70,11 @@ const deleteItem = function (id) {
 
   renderCheckout();
 };
-//tweetsData = tweetsData.filter((t) => t.uuid !== uuid);
+
+const renderModal = function (id) {
+  console.log(id);
+  console.log(modalEL);
+  modalEL.style.display = "flex";
+};
 
 renderProducts();

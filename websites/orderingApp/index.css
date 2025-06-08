@@ -89,6 +89,7 @@ main {
   font-weight: 700;
   font-size: 1.5rem;
   width: 100%;
+  cursor: pointer;
 }
 
 .item {
@@ -116,4 +117,38 @@ main {
 
 #modal {
   display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 60%;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 2px #666;
+  background-color: #212529;
+  color: whitesmoke;
+  text-align: center;
+}
+.input-fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-content: space-around;
+  gap: 10px;
+}
+.input-fields input {
+  height: 40px;
+  font-size: 1.2rem;
+  min-width: 400px;
+}
+#modal button {
+  padding: 12px 16px;
+  font-size: 1.6rem;
+  min-width: 400px;
+  background-color: #16db99;
 }
