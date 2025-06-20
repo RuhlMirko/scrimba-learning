@@ -22,6 +22,7 @@ const websitesData = [
   "twiterClone",
   "orderingApp",
   "responsiveWeb",
+  "gridImg",
 ];
 
 const websitesUl = document.getElementById("websites-ul");
