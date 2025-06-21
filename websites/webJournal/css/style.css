@@ -35,7 +35,7 @@ nav li {
 }
 
 header {
-  height: 40vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -44,12 +44,49 @@ header {
 
 #projects {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
 }
 #projects img {
-  max-height: 100px;
+  height: 100px;
+  background-color: blueviolet;
+  display: block;
 }
 #projects div {
   border: 2px solid black;
   border-radius: 5px;
-  max-width: 200px;
+  padding: 10px;
+  transition: 0.2s;
+}
+/* #projects div:hover {
+  transform: translateY(-1.1%);
+  box-shadow: 0.2rem 1rem 1rem #0000004d;
+} */
+#projects div a {
+  text-decoration: none;
+  color: inherit;
+}
+#more {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 500;
+  display: block;
+}
+
+footer {
+  background-color: #121212;
+  height: 15vh;
+  text-align: center;
+}
+footer h2 {
+  color: white;
+  font-size: 1rem;
+  margin-top: 3em;
+}
+footer a {
+  color: aqua;
+  font-style: italic;
 }
