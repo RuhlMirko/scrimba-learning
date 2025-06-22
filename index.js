@@ -23,6 +23,7 @@ const websitesData = [
   "orderingApp",
   "responsiveWeb",
   "gridImg",
+  "webJournal",
 ];
 
 const websitesUl = document.getElementById("websites-ul");
