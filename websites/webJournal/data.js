@@ -27,6 +27,13 @@ const projectsArr = [
     url: "../unitConverter/index.html",
     imgSrc: "./images/orderWeb.jpeg",
   },
+  {
+    name: "Ordering app",
+    description:
+      "This is an imperial to metric converter of various units of measurements",
+    url: "../unitConverter/index.html",
+    imgSrc: "./images/orderWeb.jpeg",
+  },
 ];
 
 export default projectsArr;
