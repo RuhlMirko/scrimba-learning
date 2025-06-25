@@ -3,7 +3,17 @@ import data from "./data.js";
 const projectEl = document.getElementById("projects");
 const fragment = document.createDocumentFragment();
 
-for (let i of data) {
+const renderData = function (start = true) {
+  data.forEach((item, index) => {
+    if (!start || index >= 4) return;
+
+    const projectItem = createProjectItem(item);
+    fragment.appendChild(projectItem);
+    projectEl.appendChild(fragment);
+  });
+};
+
+function createProjectItem(item) {
   const div = document.createElement("div");
   const parentA = document.createElement("a");
 
@@ -15,16 +25,17 @@ for (let i of data) {
   title.className = "title";
   p.className = "description";
 
-  img.src = i.imgSrc;
+  img.src = item.imgSrc;
   img.alt = "Placeholder image";
-  title.textContent = i.title;
-  p.textContent = i.description;
+  title.textContent = item.title;
+  p.textContent = item.description;
 
   parentA.appendChild(img);
   parentA.appendChild(title);
   parentA.appendChild(p);
-
   div.appendChild(parentA);
-  fragment.appendChild(div);
-  projectEl.appendChild(fragment);
+
+  return div;
 }
+
+renderData();
