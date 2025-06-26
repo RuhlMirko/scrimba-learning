@@ -36,18 +36,25 @@ nav li {
 
 header {
   color: white;
-  text-shadow: 0 0 0.2rem #121212;
   height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-bottom: 2px solid black;
   background-image: url("../images/setup.jpg");
   background-size: cover;
   background-position: center;
 }
-header p {
-  text-shadow: 2px 0 0.5rem #0d2558;
+header div {
+  background-color: #ffffff41;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+  padding: 4px 14px;
+  box-shadow: 1rem 1rem 1rem #00000070;
+  margin-bottom: 1.2em;
+}
+header p,
+header h2 {
+  text-shadow: 2px 2px 0.2rem #121212;
 }
 
 /* Mobile first */
