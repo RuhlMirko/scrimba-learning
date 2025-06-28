@@ -22,15 +22,14 @@ const projectsArr = [
   },
   {
     name: "Ordering app",
-    description:
-      "This is an imperial to metric converter of various units of measurements",
+    description: "This is a website of martial arts gear to buy",
     url: "../unitConverter/index.html",
     imgSrc: "./images/orderWeb.jpeg",
   },
   {
-    name: "Ordering app",
+    name: "Responsive Web",
     description:
-      "This is an imperial to metric converter of various units of measurements",
+      "This is a demonstration of good practices for responsive desgin",
     url: "../unitConverter/index.html",
     imgSrc: "./images/orderWeb.jpeg",
   },

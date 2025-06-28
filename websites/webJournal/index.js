@@ -2,10 +2,11 @@ import data from "./data.js";
 
 const projectEl = document.getElementById("projects");
 const fragment = document.createDocumentFragment();
+const moreBtn = document.getElementById("more");
 
 const renderData = function (start = true) {
   data.forEach((item, index) => {
-    if (!start || index >= 4) return;
+    if (start && index >= 4) return;
 
     const projectItem = createProjectItem(item);
     fragment.appendChild(projectItem);
@@ -38,4 +39,6 @@ function createProjectItem(item) {
   return div;
 }
 
-renderData();
+// renderData();
+
+moreBtn.addEventListener("click", renderData(false));
