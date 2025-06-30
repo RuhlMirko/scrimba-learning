@@ -100,8 +100,8 @@ header h2 {
 }
 #more {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  width: 200px;
+  margin: 20px auto;
   font-size: 1.5rem;
   color: black;
   font-weight: 500;
