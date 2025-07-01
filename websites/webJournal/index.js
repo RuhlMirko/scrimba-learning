@@ -2,13 +2,17 @@ import data from "./data.js";
 
 const projectEl = document.getElementById("projects");
 const moreBtn = document.getElementById("more");
-let moreBtnState = true; // Track if the button has been clicked
+let moreBtnState = false; // Track if the button has been clicked
 
-function renderData(count) {
+function renderData() {
+  let count = 4; // Default to showing 4 items
   projectEl.innerHTML = ""; // Clear previous items
   moreBtnState = !moreBtnState; // Set the state to its opposite value
   if (moreBtnState) {
-    moreBtn.textContent = "Show less"; // Change button text to "Show less"
+    moreBtn.textContent = "Show more"; // Change button text to "Show less"
+  } else {
+    moreBtn.textContent = "Show less"; // Change button text to "Show more"
+    count = data.length; // Show all items if button is clicked again
   }
 
   const fragment = document.createDocumentFragment();
@@ -44,6 +48,6 @@ function createProjectItem(item) {
   return div;
 }
 
-renderData(4); // Show 4 items initially
+renderData(); // Show 4 items initially
 
-moreBtn.addEventListener("click", () => renderData(data.length)); // Show all on click
+moreBtn.addEventListener("click", () => renderData()); // Show all on click
