@@ -17,8 +17,13 @@
     <main>
       <h1>Color Scheme generator</h1>
       <div id="color-scheme-container">
-        <input type="color" id="base-color-picker" value="#FF0000" />
-        <select name="" id="">
+        <input
+          class="color-input"
+          type="color"
+          id="base-color-picker"
+          value="#FF0000"
+        />
+        <select name="" id="scheme-selector" class="color-input">
           <option value="monochrome">Monochrome</option>
           <option value="monochrome-dark">Monochrome Dark</option>
           <option value="monochrome-light">Monochrome Light</option>
@@ -28,7 +33,7 @@
           <option value="triad">Triad</option>
           <option value="quad">Quad</option>
         </select>
-        <button>Get color Scheme</button>
+        <button class="color-input">Get color Scheme</button>
       </div>
       <div id="color-scheme-display">
         <div class="color-box" style="background-color: #ff0000"></div>
@@ -38,11 +43,11 @@
         <div class="color-box" style="background-color: #ffffff"></div>
       </div>
       <div id="color-scheme-hexcodes">
-        <div class="color-hexcode">#FF0000</div>
-        <div class="color-hexcode">#FF4646</div>
-        <div class="color-hexcode">#FF7F7F</div>
-        <div class="color-hexcode">#FFBFBF</div>
-        <div class="color-hexcode">#FFFFFF</div>
+        <button>#FF0000</button>
+        <button>#FF0000</button>
+        <button>#FF0000</button>
+        <button>#FF0000</button>
+        <button>#FF0000</button>
       </div>
     </main>
     <footer>
