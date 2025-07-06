@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <title>Color Scheme generator</title>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <main>
@@ -23,7 +24,7 @@
           id="base-color-picker"
           value="#FF0000"
         />
-        <select name="" id="scheme-selector" class="color-input">
+        <select name="mode" id="scheme-selector" class="color-input">
           <option value="monochrome">Monochrome</option>
           <option value="monochrome-dark">Monochrome Dark</option>
           <option value="monochrome-light">Monochrome Light</option>
@@ -33,7 +34,7 @@
           <option value="triad">Triad</option>
           <option value="quad">Quad</option>
         </select>
-        <button class="color-input">Get color Scheme</button>
+        <button class="color-input" id="get-scheme">Get color Scheme</button>
       </div>
       <div id="color-scheme-display">
         <div class="color-box" style="background-color: #ff0000"></div>

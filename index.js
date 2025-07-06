@@ -24,6 +24,7 @@ const websitesData = [
   "responsiveWeb",
   "gridImg",
   "webJournal",
+  "colorScheme",
 ];
 
 const websitesUl = document.getElementById("websites-ul");
