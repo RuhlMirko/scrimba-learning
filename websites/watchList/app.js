@@ -27,9 +27,10 @@ searchBtn.addEventListener("click", () => {
           poster.src = movie.Poster;
           poster.alt = `${movie.Title} Poster`;
 
+          movieDiv.appendChild(poster);
           movieDiv.appendChild(title);
           movieDiv.appendChild(year);
-          movieDiv.appendChild(poster);
+
           fragment.appendChild(movieDiv);
         });
       } else {

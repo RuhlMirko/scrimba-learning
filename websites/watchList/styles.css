@@ -80,8 +80,10 @@ main {
 }
 
 #results {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   padding: 20px;
 }
@@ -102,12 +104,30 @@ main {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.4);
+  background-color: #f8f1df;
+  transition: transform 0.2s ease-in-out;
 }
+.movie h3 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+.movie p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 0;
+}
+
 .movie img {
   aspect-ratio: 2/3;
   width: 300px;
   align-self: center;
   border-radius: 5px;
+}
+.movie:hover {
+  transform: scale(1.05);
 }
