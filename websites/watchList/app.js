@@ -43,3 +43,25 @@ searchBtn.addEventListener("click", () => {
       resultsSection.appendChild(fragment);
     });
 });
+
+searchBar.addEventListener("input", () => {
+  const query = searchBar.value.trim();
+  const suggestionsDiv = document.getElementById("suggestions");
+  suggestionsDiv.innerHTML = ""; // Clear previous suggestions
+
+  fetch(`https://www.omdbapi.com/?s=${query}&apikey=9f4618dc`)
+    .then((res) => res.json())
+    .then((data) => {
+      if (data.Search) {
+        data.Search.forEach((movie) => {
+          const suggestionItem = document.createElement("div");
+          suggestionItem.textContent = movie.Title;
+          suggestionItem.addEventListener("click", () => {
+            searchBar.value = movie.Title;
+            suggestionsDiv.innerHTML = ""; // Clear suggestions
+          });
+          suggestionsDiv.appendChild(suggestionItem);
+        });
+      }
+    });
+});

@@ -25,6 +25,7 @@ const websitesData = [
   "gridImg",
   "webJournal",
   "colorScheme",
+  "watchlist",
 ];
 
 const websitesUl = document.getElementById("websites-ul");

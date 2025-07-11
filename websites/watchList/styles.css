@@ -79,6 +79,26 @@ main {
   background-color: #f0f0f0;
 }
 
+#suggestions {
+  position: absolute;
+  left: 48%;
+  transform: translateX(-50%);
+  width: 60vw;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.4);
+}
+#suggestions div {
+  padding: 8px;
+  cursor: pointer;
+}
+#suggestions div:hover {
+  background-color: #f0f0f0;
+}
+
 #results {
   display: flex;
   flex-direction: column;
