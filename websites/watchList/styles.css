@@ -36,6 +36,9 @@ header a:hover {
 main {
   z-index: 10;
 }
+button {
+  cursor: pointer;
+}
 
 #search-bar {
   display: flex;
@@ -123,17 +126,26 @@ main {
   border: 2px solid #000;
   padding: 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   overflow: hidden;
   box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.4);
   background-color: #f8f1df;
   transition: transform 0.2s ease-in-out;
 }
+.movie div {
+  text-align: start;
+  margin: 12px;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
 .movie h3 {
   font-size: 1.2rem;
-  text-align: center;
   margin-bottom: 0;
 }
 .movie p {

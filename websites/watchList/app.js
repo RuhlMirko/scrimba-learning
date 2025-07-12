@@ -1,37 +1,34 @@
 const searchBar = document.getElementById("search");
 const searchBtn = document.getElementById("search-btn");
 const resultsSection = document.getElementById("results");
+const suggestionsDiv = document.getElementById("suggestions");
 
 searchBtn.addEventListener("click", () => {
+  suggestionsDiv.innerHTML = "";
   const query = searchBar.value.trim();
+  const fragment = document.createDocumentFragment();
   console.log(query);
 
-  fetch(`https://www.omdbapi.com/?s=${query}&apikey=9f4618dc`)
+  fetch(`https://www.omdbapi.com/?s=${query}&apikey=9f4618dc&plot=full`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       resultsSection.innerHTML = ""; // Clear previous results
-      const fragment = document.createDocumentFragment();
+
       if (data.Search) {
-        data.Search.forEach((movie) => {
-          const movieDiv = document.createElement("div");
-          movieDiv.classList.add("movie");
+        // Collect all fetch promises
+        const detailPromises = data.Search.map((movie) =>
+          fetch(
+            `https://www.omdbapi.com/?t=${movie.Title}&apikey=9f4618dc&plot=full`
+          )
+            .then((res) => res.json())
+            .then((movieData) => {
+              fragment.appendChild(createDiv(movieData));
+            })
+        );
 
-          const title = document.createElement("h3");
-          title.textContent = movie.Title;
-
-          const year = document.createElement("p");
-          year.textContent = `Year: ${movie.Year}`;
-
-          const poster = document.createElement("img");
-          poster.src = movie.Poster;
-          poster.alt = `${movie.Title} Poster`;
-
-          movieDiv.appendChild(poster);
-          movieDiv.appendChild(title);
-          movieDiv.appendChild(year);
-
-          fragment.appendChild(movieDiv);
+        // Wait for all fetches to finish, then append the fragment
+        Promise.all(detailPromises).then(() => {
+          resultsSection.appendChild(fragment);
         });
       } else {
         resultsSection.innerHTML = ""; // Clear previous results
@@ -39,14 +36,13 @@ searchBtn.addEventListener("click", () => {
         noResults.textContent = "No results found.";
         noResults.classList.add("placeholder");
         fragment.appendChild(noResults);
+        resultsSection.appendChild(fragment);
       }
-      resultsSection.appendChild(fragment);
     });
 });
 
 searchBar.addEventListener("input", () => {
   const query = searchBar.value.trim();
-  const suggestionsDiv = document.getElementById("suggestions");
   suggestionsDiv.innerHTML = ""; // Clear previous suggestions
 
   fetch(`https://www.omdbapi.com/?s=${query}&apikey=9f4618dc`)
@@ -65,3 +61,41 @@ searchBar.addEventListener("input", () => {
       }
     });
 });
+
+function createDiv(movieData) {
+  console.log(movieData);
+
+  const div = document.createElement("div");
+  div.classList.add("movie");
+  const poster = document.createElement("img");
+  poster.src = movieData.Poster;
+
+  const descDiv = document.createElement("div");
+  const description = document.createElement("p");
+  const title = document.createElement("h3");
+  const detailsDiv = document.createElement("div");
+  const watchTime = document.createElement("p");
+  const genre = document.createElement("p");
+  const addBtn = document.createElement("button");
+
+  title.textContent = movieData.Title;
+  description.textContent = movieData.Plot;
+  detailsDiv.classList.add("details");
+  watchTime.textContent = movieData.Runtime;
+  genre.textContent = movieData.Genre;
+  addBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Add to My Watchlist';
+
+  div.appendChild(poster);
+
+  descDiv.appendChild(title);
+  descDiv.appendChild(description);
+  descDiv.appendChild(detailsDiv);
+  detailsDiv.appendChild(watchTime);
+  detailsDiv.appendChild(genre);
+  detailsDiv.appendChild(addBtn);
+
+  div.appendChild(descDiv);
+
+  console.log(div);
+  return div;
+}
