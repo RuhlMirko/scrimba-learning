@@ -78,21 +78,22 @@ function createDiv(movieData) {
   const genre = document.createElement("p");
   const addBtn = document.createElement("button");
 
-  title.textContent = movieData.Title;
+  title.textContent = `${movieData.Title} ⭐ ${movieData.imdbRating} (${movieData.imdbVotes} votes)`;
   description.textContent = movieData.Plot;
   detailsDiv.classList.add("details");
   watchTime.textContent = movieData.Runtime;
-  genre.textContent = movieData.Genre;
-  addBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Add to My Watchlist';
+  genre.textContent = movieData.Genre + " - Rated: " + movieData.Rated;
+  addBtn.textContent = "Add to My Watchlist";
 
   div.appendChild(poster);
 
   descDiv.appendChild(title);
-  descDiv.appendChild(description);
+
   descDiv.appendChild(detailsDiv);
   detailsDiv.appendChild(watchTime);
   detailsDiv.appendChild(genre);
   detailsDiv.appendChild(addBtn);
+  descDiv.appendChild(description);
 
   div.appendChild(descDiv);
 

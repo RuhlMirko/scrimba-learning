@@ -130,9 +130,9 @@ button {
   justify-content: space-between;
   align-items: center;
   overflow: hidden;
+  width: 100%;
   box-shadow: 0.2rem 1rem 1rem rgba(0, 0, 0, 0.4);
-  background-color: #f8f1df;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-out;
 }
 .movie div {
   text-align: start;
@@ -144,6 +144,15 @@ button {
   align-items: center;
   flex-direction: row;
 }
+.details button {
+  border: none;
+  background-color: #333;
+  color: #f0f0f0;
+  border-radius: 5px;
+  padding: 8px 16px;
+  font-weight: 700;
+}
+
 .movie h3 {
   font-size: 1.2rem;
   margin-bottom: 0;
@@ -156,10 +165,10 @@ button {
 
 .movie img {
   aspect-ratio: 2/3;
-  width: 300px;
+  width: 150px;
   align-self: center;
   border-radius: 5px;
 }
 .movie:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
 }
