@@ -7,7 +7,6 @@ searchBtn.addEventListener("click", () => {
   suggestionsDiv.innerHTML = "";
   const query = searchBar.value.trim();
   const fragment = document.createDocumentFragment();
-  console.log(query);
 
   fetch(`https://www.omdbapi.com/?s=${query}&apikey=9f4618dc&plot=full`)
     .then((res) => res.json())
@@ -63,8 +62,6 @@ searchBar.addEventListener("input", () => {
 });
 
 function createDiv(movieData) {
-  console.log(movieData);
-
   const div = document.createElement("div");
   div.classList.add("movie");
   const poster = document.createElement("img");
@@ -97,6 +94,5 @@ function createDiv(movieData) {
 
   div.appendChild(descDiv);
 
-  console.log(div);
   return div;
 }

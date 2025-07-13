@@ -25,7 +25,7 @@ header h1,
 header a {
   color: #fff;
   margin: 0;
-  font-size: 2em;
+  font-size: 3em;
   transition: 0.3s;
 }
 header a:hover {
