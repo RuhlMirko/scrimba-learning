@@ -96,3 +96,9 @@ function createDiv(movieData) {
 
   return div;
 }
+
+function saveToLocal(obj) {
+  localStorage.setItem();
+}
+
+function getLocal() {}
