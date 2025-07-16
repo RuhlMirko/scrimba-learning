@@ -65,7 +65,12 @@ function createDiv(movieData) {
   const div = document.createElement("div");
   div.classList.add("movie");
   const poster = document.createElement("img");
+
   poster.src = movieData.Poster;
+  console.log(movieData);
+  poster.onerror = () => {
+    poster.src = "./placeholder.png";
+  };
 
   const descDiv = document.createElement("div");
   const description = document.createElement("p");
