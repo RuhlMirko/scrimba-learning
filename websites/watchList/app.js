@@ -103,7 +103,11 @@ function createDiv(movieData) {
 }
 
 function saveToLocal(obj) {
-  localStorage.setItem();
+  // localStorage.setItem();
+  // const storedArr = JSON.parse(localStorage.getItem("myMovies"));
+  // storedArr
+  //   ? localStorage.setItem("myMovies", JSON.stringify(storedArr + newArr))
+  //   : localStorage.setItem("myMovies", JSON.stringify(newArr));
 }
 
 function getLocal() {}
