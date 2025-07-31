@@ -2,6 +2,7 @@ const searchBar = document.getElementById("search");
 const searchBtn = document.getElementById("search-btn");
 const resultsSection = document.getElementById("results");
 const suggestionsDiv = document.getElementById("suggestions");
+// My movies storage
 
 searchBtn.addEventListener("click", () => {
   suggestionsDiv.innerHTML = "";
@@ -86,6 +87,7 @@ function createDiv(movieData) {
   watchTime.textContent = movieData.Runtime;
   genre.textContent = movieData.Genre + " - Rated: " + movieData.Rated;
   addBtn.textContent = "Add to My Watchlist";
+  addBtn.onclick = saveToLocal;
 
   div.appendChild(poster);
 
@@ -102,7 +104,13 @@ function createDiv(movieData) {
   return div;
 }
 
+let isMyMovies = localStorage.getItem("myMovies")
+  ? JSON.parse(localStorage.getItem("myMovies"))
+  : [];
+let myMovies = isMyMovies;
+
 function saveToLocal(obj) {
+  console.log("Trigger");
   // localStorage.setItem();
   // const storedArr = JSON.parse(localStorage.getItem("myMovies"));
   // storedArr
@@ -111,3 +119,5 @@ function saveToLocal(obj) {
 }
 
 function getLocal() {}
+
+console.log(myMovies);
