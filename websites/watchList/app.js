@@ -87,7 +87,11 @@ function createDiv(movieData) {
   watchTime.textContent = movieData.Runtime;
   genre.textContent = movieData.Genre + " - Rated: " + movieData.Rated;
   addBtn.textContent = "Add to My Watchlist";
-  addBtn.onclick = saveToLocal;
+  addBtn.onclick = function () {
+    saveToLocal(movieData);
+    // addBtn.textContent = "Remove from My watchlist";
+    // addBtn.style.backgroundColor = "#b31818b7";
+  };
 
   div.appendChild(poster);
 
@@ -110,7 +114,7 @@ let isMyMovies = localStorage.getItem("myMovies")
 let myMovies = isMyMovies;
 
 function saveToLocal(obj) {
-  console.log("Trigger");
+  console.log("Trigger", obj);
   // localStorage.setItem();
   // const storedArr = JSON.parse(localStorage.getItem("myMovies"));
   // storedArr
