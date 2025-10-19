@@ -1,12 +1,14 @@
 import React from "react"
-import IngredientsList from "./components/IngredientsList"
-import ClaudeRecipe from "./components/ClaudeRecipe"
-import { getRecipeFromChefClaude, getRecipeFromMistral } from "./ai"
+import IngredientsList from "./IngredientsList"
+import ClaudeRecipe from "./ClaudeRecipe"
+import { getRecipeFromChefClaude, getRecipeFromMistral } from "../ai"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState(
         ["chicken", "all the main spices", "corn", "heavy cream", "pasta"]
     )
+    
+    ingredients.push()
     const [recipe, setRecipe] = React.useState("")
 
     async function getRecipe() {
