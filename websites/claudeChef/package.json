@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s06ivq3",
-  "description": "https://scrimba.com/frontend-path-c0j/~0xuj",
+  "name": "Scrim-s06is6m",
+  "description": "https://scrimba.com/frontend-path-c0j/~0yvl",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -8,11 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "19.0.0-rc-8b08e99e-20240713",
-    "react-dom": "19.0.0-rc-8b08e99e-20240713",
-    "@anthropic-ai/sdk": "0.27.3",
-    "@huggingface/inference": "2.8.1",
-    "react-markdown": "9.0.1",
+    "react": "19.0.0-rc-b57d2823-20240822",
+    "react-dom": "19.0.0-rc-b57d2823-20240822",
     "vite": "latest"
   },
   "devDependencies": {
