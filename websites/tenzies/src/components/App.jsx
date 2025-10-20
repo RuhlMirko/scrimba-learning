@@ -5,6 +5,7 @@ import Confetti from "react-confetti"
 
 export default function App() {
     const highScore = localStorage.getItem('high-score') || 0
+    const highScoreTime = localStorage.getItem('high-score-time') || 0
     const [dice, setDice] = useState(() => generateAllNewDice())
     const [rolledDices, setRolledDices] = useState(0)
     const [startTime, setStartTime] = useState(null)
@@ -71,7 +72,10 @@ export default function App() {
         } else {
             // Reset game
             setDice(generateAllNewDice())
-            if (highScore === 0 || rolledDices < highScore) localStorage.setItem('high-score', rolledDices)
+            if (highScore === 0 || rolledDices < highScore) {
+              localStorage.setItem('high-score', rolledDices)
+              localStorage.setItem('high-score-time', formatTime(elapsedTime))
+            }
             setRolledDices(0)
             setStartTime(null)
             setElapsedTime(0)
@@ -108,7 +112,7 @@ export default function App() {
             <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls. Timer starts as soon as you make a roll.</p>
             <h2 className="timer">{formatTime(elapsedTime)}</h2>
             <h2>Rolled Dices: {rolledDices}</h2>            
-            {highScore > 0 && <h3>Highest score: {highScore}</h3>}
+            {highScore > 0 && <h3>Highest score: {highScore} in {highScoreTime}</h3>}
             <div className="dice-container">
                 {diceElements}
             </div>
