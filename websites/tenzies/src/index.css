@@ -66,6 +66,7 @@ h3 {
   border-radius: 15px;
   color: red;
   text-shadow: 0 2px 5px #b66464ee;
+  font-weight: lighter;
 }
 
 .dice-container {
