@@ -17,8 +17,8 @@ body {
 div#root {
   height: 100%;
   width: 100%;
-  max-height: 550px;
-  max-width: 500px;
+  max-height: 620px;
+  max-width: 600px;
 }
 
 main {
@@ -60,7 +60,7 @@ h3 {
 
 .timer {
   font-family: "consolas", monospace;
-  margin-top: 10px;
+  margin-bottom: 10px;
   background-color: #1c221a;
   padding: 10px 30px;
   border-radius: 15px;
@@ -95,6 +95,14 @@ button:active {
   background-color: white;
   font-size: 2rem;
   font-weight: bold;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 
 button.roll-dice {

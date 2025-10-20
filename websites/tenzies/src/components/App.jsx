@@ -110,9 +110,14 @@ export default function App() {
             </div>
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls. Timer starts as soon as you make a roll.</p>
-            <h2 className="timer">{formatTime(elapsedTime)}</h2>
-            <h2>Rolled Dices: {rolledDices}</h2>            
-            {highScore > 0 && <h3>Highest score: {highScore} in {highScoreTime}</h3>}
+            
+            <div className="score">
+              <h2 className="timer">{formatTime(elapsedTime)}</h2>  
+              <h2>Rolled Dices: {rolledDices}</h2>            
+              {highScore > 0 && <h3>Highest score: {highScore} in {highScoreTime}</h3>}
+            </div>
+            
+
             <div className="dice-container">
                 {diceElements}
             </div>
