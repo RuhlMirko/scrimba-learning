@@ -71,7 +71,7 @@ export default function App() {
             <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
             <h2 className="timer">00:00</h2>
             <h2>Rolled Dices: {rolledDices}</h2>            
-            <h3>Highest score: {highScore}</h3>
+            {highScore > 0 && <h3>Highest score: {highScore}</h3>}
             <div className="dice-container">
                 {diceElements}
             </div>
