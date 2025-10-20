@@ -4,6 +4,7 @@ import { nanoid } from "nanoid"
 import Confetti from "react-confetti"
 
 export default function App() {
+    const highScore = localStorage.getItem('high-score') || 0
     const [dice, setDice] = useState(() => generateAllNewDice())
     const [rolledDices, setRolledDices] = useState(0)
     const buttonRef = useRef(null)
@@ -38,6 +39,7 @@ export default function App() {
             ))
         } else {
             setDice(generateAllNewDice())
+            if (highScore === 0 || rolledDices < highScore) localStorage.setItem('high-score', rolledDices)
             setRolledDices(0)
         }
     }
@@ -67,7 +69,9 @@ export default function App() {
             </div>
             <h1 className="title">Tenzies</h1>
             <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
-            <h2>Counter: {rolledDices}</h2>
+            <h2 className="timer">00:00</h2>
+            <h2>Rolled Dices: {rolledDices}</h2>            
+            <h3>Highest score: {highScore}</h3>
             <div className="dice-container">
                 {diceElements}
             </div>
