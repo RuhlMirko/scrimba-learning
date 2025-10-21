@@ -27,6 +27,7 @@ header > p {
   font-size: 0.875rem;
   max-width: 350px;
   color: #8e8e8e;
+  margin: 0 auto;
 }
 
 section.game-status {
@@ -89,7 +90,7 @@ section.keyboard {
   margin-bottom: 36px;
 }
 
-section.keyboard > button {
+.keyboard > button {
   height: 35px;
   aspect-ratio: 1 / 1;
   background-color: #f9f4da;
@@ -101,7 +102,7 @@ section.keyboard > button {
   font-size: 1rem;
 }
 
-section.keyboard button:hover {
+.keyboard button:hover {
   background-color: #f9f4da9d;
   color: #f9f4da;
   border-color: #d7d7d76e;
@@ -129,4 +130,20 @@ button.new-game {
   font-size: 1.2rem;
   color: #f9f4da;
   text-shadow: 0 1px 2px #000;
+}
+section.button button.correct {
+  background-color: #10a95a8c;
+  border: 1px solid #0e8c4d8c;
+  color: #f9f4da;
+}
+section.button button.incorrect {
+  background-color: #8d0d0d8c;
+  border: 1px solid #b40e0e8c;
+  color: #f9f4da;
+}
+button.new-game:hover {
+  background-color: #11b5e59d;
+}
+button.new-game:active {
+  transform: scale(0.95);
 }
