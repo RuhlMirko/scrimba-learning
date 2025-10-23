@@ -2,21 +2,18 @@ import { useState } from "react"
 import { clsx } from "clsx"
 import { languages } from "./languages"
 
-/**
- * Goal: Allow the user to start guessing the letters
- * 
- * Challenge: Update the keyboard when a letter is right
- * or wrong.
- * 
- * Bonus: use the `clsx` package to easily add conditional 
- * classNames to the keys of the keyboard. Check the docs 
- * to learn how to use it 📖
- */
-
 export default function AssemblyEndgame() {
+    // State values
     const [currentWord, setCurrentWord] = useState("react")
     const [guessedLetters, setGuessedLetters] = useState([])
-
+    
+    // Derived values
+    const wrongGuessesArray = 
+        guessedLetters.filter(letter => !currentWord.includes(letter))
+    console.log(wrongGuessesArray)
+    
+    
+    // Static values
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
     function addGuessedLetter(letter) {
@@ -44,7 +41,9 @@ export default function AssemblyEndgame() {
     })
 
     const letterElements = currentWord.split("").map((letter, index) => (
-        <span key={index}>{letter.toUpperCase()}</span>
+        <span key={index}>
+            {guessedLetters.includes(letter) ? letter.toUpperCase() : ""}
+        </span>
     ))
 
     const keyboardElements = alphabet.split("").map(letter => {
@@ -55,8 +54,6 @@ export default function AssemblyEndgame() {
             correct: isCorrect,
             wrong: isWrong
         })
-        
-        console.log(className)
         
         return (
             <button
