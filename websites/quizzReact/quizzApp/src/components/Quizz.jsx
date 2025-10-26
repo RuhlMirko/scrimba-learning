@@ -6,7 +6,9 @@ function Quizz() {
     const [loading, setLoading] = React.useState(true)
     const [error, setError] = React.useState(null)
     
-    React.useEffect(function() {
+
+    function getNewQuestions() {
+        React.useEffect(function() {
         console.log("Render")
         const controller = new AbortController()
         
@@ -33,6 +35,9 @@ function Quizz() {
             
         return () => controller.abort() // Cleanup function
     }, [])
+    }
+
+    getNewQuestions()
 
     if (loading) {
         return (
