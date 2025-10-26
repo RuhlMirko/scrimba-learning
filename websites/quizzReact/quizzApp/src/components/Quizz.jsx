@@ -62,9 +62,6 @@ function Quizz() {
                 <h3>{he.decode(questionObj.question)}</h3>
                 <div className="answers">
                     {allAnswers.map((answer, answerIndex) => (
-                        // <button key={answerIndex} className="answer-btn">
-                        //     {he.decode(answer)}
-                        // </button>
                         <label key={answerIndex} className="answer-label">
                             <input 
                                 type="radio"
@@ -81,6 +78,7 @@ function Quizz() {
     return (
         <main>
             {questionsElements}
+            <button id="check-answers-btn">Check Answers</button>
         </main>
     )
 }   

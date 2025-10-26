@@ -84,11 +84,31 @@ a {
   cursor: pointer;
   text-align: center;
   transition: 0.25s ease-out;
+  font-weight: 600;
 }
 .answer-label input {
   margin-right: 10px;
   accent-color: #84d5f3;
   display: none;
+}
+.answer-label:has(input:checked) {
+  background-color: #84d5f3;
+  color: #242424;
+  border-color: #84d5f3;
+  box-shadow: 0 0 10px rgba(132, 213, 243, 0.3);
+}
+
+/* For browsers that don't support :has() */
+.answer-label input:checked + span {
+  background-color: #84d5f3;
+  color: #242424;
+}
+
+#check-answers-btn {
+  align-self: center;
+  margin-top: 3vh;
+  padding: 12px 45px;
+  font-weight: 700;
 }
 
 @media (prefers-color-scheme: light) {
