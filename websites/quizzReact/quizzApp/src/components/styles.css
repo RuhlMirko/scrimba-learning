@@ -1,6 +1,7 @@
 body {
   font-family: "Nunito", sans-serif;
   color: #d1f9fa;
+  position: relative;
 }
 main {
   display: flex;
@@ -27,4 +28,28 @@ button:active {
 
 a {
   color: #84d5f3;
+}
+
+#blob1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15vw;
+  max-width: 150px;
+}
+#blob2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  max-width: 150px;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    color: #213547;
+  }
+  a {
+    color: #1e90ff;
+  }
 }
