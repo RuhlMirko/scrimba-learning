@@ -6,14 +6,9 @@ import Quizz from './Quizz.jsx'
 
 function HomePage() {
   const [isGameStarted, setIsGameStarted] = useState(false)
-  const [isTransitioning, setIsTransitioning] = useState(false)
   
   function gameStart(){
-    setIsTransitioning(true)
-    setTimeout(() => {
-      setIsGameStarted(true)
-      setIsTransitioning(false)
-    }, 300) // Match the fadeOut duration
+    setIsGameStarted(true)    
   }
 
   return (
@@ -25,7 +20,7 @@ function HomePage() {
     {
       isGameStarted ? 
         <div className="quiz-container"><Quizz /></div> :
-        <main>
+        <main className='welcome-container'>
           <h1>Quizzical</h1>
           <p>Welcome to an interactive version of the "<a href="https://opentdb.com/">Open Trivia Database</a>". Click the button below to start a new game.</p>
           <button onClick={gameStart}>Start Quizz</button>

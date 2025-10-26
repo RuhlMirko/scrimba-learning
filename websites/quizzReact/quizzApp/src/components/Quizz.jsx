@@ -1,4 +1,5 @@
 import React from "react"
+import he from "he"
 
 function Quizz() {
     const [questions, setQuestions] = React.useState([])
@@ -6,7 +7,7 @@ function Quizz() {
     const [error, setError] = React.useState(null)
     
     React.useEffect(function() {
-        console.log("Effect ran")
+        console.log("Render")
         const controller = new AbortController()
         
         fetch(`https://opentdb.com/api.php?amount=4&type=multiple&token=${import.meta.env.VITE_API_TOKEN}`, {
@@ -36,7 +37,7 @@ function Quizz() {
     if (loading) {
         return (
             <main>
-                Loading questions...
+                <h2>Loading questions...</h2>
             </main>
         )
     }
@@ -44,14 +45,34 @@ function Quizz() {
     if (error) {
         return (
             <main>
-                Error: {error}
+                <h2>Error: {error}</h2>
             </main>
         )
     }
-    
+
+    console.log("Questions loaded:", questions)
+    const questionsElements = questions.map((questionObj, index) => {
+        // Combine correct and incorrect answers randomly
+        const allAnswers = [...questionObj.incorrect_answers]
+        const randomIndex = Math.floor(Math.random() * (allAnswers.length + 1))
+        allAnswers.splice(randomIndex, 0, questionObj.correct_answer)
+        
+        return (
+            <div key={index} className="question-container">            
+                <h3>{he.decode(questionObj.question)}</h3>
+                <div className="answers">
+                    {allAnswers.map((answer, answerIndex) => (
+                        <button key={answerIndex} className="answer-btn">
+                            {he.decode(answer)}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        )
+    })
     return (
         <main>
-            Quizz Component - {questions.length} questions loaded
+            {questionsElements}
         </main>
     )
 }   
