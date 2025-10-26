@@ -24,8 +24,8 @@ function HomePage() {
     </div>
     {
       isGameStarted ? 
-        <div className="fade-in"><Quizz /></div> :
-        <main className={isTransitioning ? "fade-out" : ""}>
+        <div className="quiz-container"><Quizz /></div> :
+        <main>
           <h1>Quizzical</h1>
           <p>Welcome to an interactive version of the "<a href="https://opentdb.com/">Open Trivia Database</a>". Click the button below to start a new game.</p>
           <button onClick={gameStart}>Start Quizz</button>
