@@ -44,6 +44,7 @@ button {
   transition: 0.25s ease-out;
   color: #242424;
 }
+.answer-label:hover,
 button:hover {
   border-color: #ffffff;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);

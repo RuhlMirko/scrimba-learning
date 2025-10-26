@@ -10,7 +10,7 @@ function Quizz() {
         console.log("Render")
         const controller = new AbortController()
         
-        fetch(`https://opentdb.com/api.php?amount=4&type=multiple&token=${import.meta.env.VITE_API_TOKEN}`, {
+        fetch(`https://opentdb.com/api.php?amount=4&type=multiple`, {
             signal: controller.signal
         })
             .then(res => res.json())
@@ -62,9 +62,17 @@ function Quizz() {
                 <h3>{he.decode(questionObj.question)}</h3>
                 <div className="answers">
                     {allAnswers.map((answer, answerIndex) => (
-                        <button key={answerIndex} className="answer-btn">
+                        // <button key={answerIndex} className="answer-btn">
+                        //     {he.decode(answer)}
+                        // </button>
+                        <label key={answerIndex} className="answer-label">
+                            <input 
+                                type="radio"
+                                name={`question-${index}`}
+                                value={he.decode(answer)}
+                            />
                             {he.decode(answer)}
-                        </button>
+                        </label>
                     ))}
                 </div>
             </div>

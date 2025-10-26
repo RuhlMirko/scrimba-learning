@@ -74,13 +74,21 @@ a {
   gap: 1em;
   margin-bottom: 2vh;
 }
-.answer-btn {
+.answer-label {
   background: none;
   color: #d1f9fa;
   border: 1px solid #84d5f3;
   width: 100%;
   border-radius: 25px;
   padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.25s ease-out;
+}
+.answer-label input {
+  margin-right: 10px;
+  accent-color: #84d5f3;
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
