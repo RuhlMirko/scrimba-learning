@@ -31,6 +31,9 @@ body {
   justify-content: space-evenly;
   height: 100vh;
 }
+img {
+  z-index: -1;
+}
 
 button {
   border-radius: 8px;

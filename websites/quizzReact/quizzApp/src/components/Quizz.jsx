@@ -9,32 +9,32 @@ function Quizz() {
 
     function getNewQuestions() {
         React.useEffect(function() {
-        console.log("Render")
-        const controller = new AbortController()
-        
-        fetch(`https://opentdb.com/api.php?amount=4&type=multiple`, {
-            signal: controller.signal
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log("API Response:", data)
-                if (data.results && Array.isArray(data.results)) {
-                    setQuestions(data.results)
-                } else {
-                    setError("Failed to load questions")
-                }
-                setLoading(false)
-            })
-            .catch(err => {
-                if (err.name !== 'AbortError') {
-                    console.error("Fetch error:", err)
-                    setError("Network error")
-                    setLoading(false)
-                }
-            })
+            console.log("Render")
+            const controller = new AbortController()
             
-        return () => controller.abort() // Cleanup function
-    }, [])
+            fetch(`https://opentdb.com/api.php?amount=4&type=multiple`, {
+                signal: controller.signal
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log("API Response:", data)
+                    if (data.results && Array.isArray(data.results)) {
+                        setQuestions(data.results)
+                    } else {
+                        setError("Failed to load questions")
+                    }
+                    setLoading(false)
+                })
+                .catch(err => {
+                    if (err.name !== 'AbortError') {
+                        console.error("Fetch error:", err)
+                        setError("Network error")
+                        setLoading(false)
+                    }
+                })
+            
+            return () => controller.abort() // Cleanup function
+        }, [])
     }
 
     getNewQuestions()

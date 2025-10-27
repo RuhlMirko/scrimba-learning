@@ -45,6 +45,8 @@ a {
 .quiz-container {
   opacity: 0;
   animation: fadeIn 0.6s ease-in-out forwards;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .welcome-container {
