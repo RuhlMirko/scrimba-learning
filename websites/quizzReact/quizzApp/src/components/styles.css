@@ -66,8 +66,8 @@ a {
   border-bottom: 2px solid rgba(119, 228, 219, 0.5);
 }
 .question-container h3 {
-  font-size: 1.5rem;
-  max-width: 900px;
+  font-size: 2.8vh;
+  max-width: 1200px;
 }
 
 .answers {

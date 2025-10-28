@@ -62,11 +62,7 @@ function Quizz() {
         const randomIndex = Math.floor(Math.random() * (allAnswers.length + 1))
         allAnswers.splice(randomIndex, 0, questionObj.correct_answer)
         
-        return (
-            <div key={index} className="question-container">            
-                <h3>{he.decode(questionObj.question)}</h3>
-                <div className="answers">
-                    {allAnswers.map((answer, answerIndex) => (
+        const answerElements = allAnswers.map((answer, answerIndex) => (
                         <label key={answerIndex} className="answer-label">
                             <input 
                                 type="radio"
@@ -75,7 +71,13 @@ function Quizz() {
                             />
                             {he.decode(answer)}
                         </label>
-                    ))}
+                    ))
+        
+        return (
+            <div key={index} className="question-container">            
+                <h3>{he.decode(questionObj.question)}</h3>
+                <div className="answers">
+                    {answerElements}
                 </div>
             </div>
         )
