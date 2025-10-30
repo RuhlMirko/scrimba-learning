@@ -7,6 +7,22 @@ function Quizz() {
     const [error, setError] = React.useState(null)
     
 
+    function checkAnswers() {
+        questionsElements.forEach((questionElement, index) => {            
+            const selectedAnswer = document.querySelector(`input[name="question-${index}"]:checked`)
+            if (selectedAnswer) {
+                const userAnswer = selectedAnswer.value
+                const correctAnswer = he.decode(questions[index].correct_answer)
+                if (userAnswer === correctAnswer) {
+                    selectedAnswer.parentElement.style.backgroundColor = "#acefbdff"
+                }
+                else {
+                    selectedAnswer.parentElement.style.backgroundColor = "#F8BCBC"
+                }
+            }
+        })
+    }
+
     function getNewQuestions() {
         React.useEffect(function() {
             console.log("Render")
@@ -85,7 +101,7 @@ function Quizz() {
     return (
         <main>
             {questionsElements}
-            <button id="check-answers-btn">Check Answers</button>
+            <button id="check-answers-btn" onClick={checkAnswers}>Check Answers</button>
         </main>
     )
 }   
