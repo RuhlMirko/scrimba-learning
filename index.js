@@ -26,6 +26,16 @@ const websitesData = [
   "webJournal",
   "colorScheme",
   "watchlist",
+  "quizzReact",
+  "markdownPreviewer",
+  "noteApp",
+  "pomodoro",
+  "taskManager",
+  "weatherApp",
+  "movieApp",
+  "recipeApp",
+  "expenseTracker",
+  "blogPlatform",
 ];
 
 const websitesUl = document.getElementById("websites-ul");
