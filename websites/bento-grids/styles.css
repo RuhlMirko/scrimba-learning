@@ -1,0 +1,25 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2%;
+  background-color: #121212;
+}
+
+.box {
+  background: linear-gradient(0deg, #40094dbd, #662175a6);
+  border-radius: 8px;
+  border: 1px solid #9b0db8;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 200px);
+  gap: 1em;
+}
+.grid-container .box {
+  width: 100%;
+  height: 100%;
+}
