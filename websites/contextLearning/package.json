@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s05u8gg",
-  "description": "https://scrimba.com/frontend-path-c0j/~010k",
+  "name": "Scrim-s03d8e5",
+  "description": "https://scrimba.com/frontend-path-c0j/~0110",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -10,6 +10,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "4.4.0",
     "vite": "latest"
   },
   "devDependencies": {

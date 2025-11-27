@@ -1,22 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Menu from "./Menu/Menu"
-import MenuButton from "./Menu/MenuButton"
-import MenuDropdown from "./Menu/MenuDropdown"
-import MenuItem from "./Menu/MenuItem"
+import Menu from "./components/Menu/index"
+import Star from "./components/Star"
 
 function App() {
-  const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"]
-
   return (
-    <Menu>
-      <MenuButton>Sports</MenuButton>
-      <MenuDropdown>
-        {sports.map(sport => (
-          <MenuItem key={sport}>{sport}</MenuItem>
-        ))}
-      </MenuDropdown>
-    </Menu>
+    <>
+      <Star onChange={() => {}} />
+      
+      <br />
+
+      <Menu>
+        <Menu.Button>Menu</Menu.Button>
+        <Menu.Dropdown>
+          <Menu.Item>Home</Menu.Item>
+          <Menu.Item>About</Menu.Item>
+          <Menu.Item>Contact</Menu.Item>
+          <Menu.Item>Blog</Menu.Item>
+        </Menu.Dropdown>
+      </Menu>
+    </>
   )
 }
 
