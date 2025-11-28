@@ -1,20 +1,20 @@
 import React from "react"
-import Toggle from "../Toggle/index"
+import useToggle from "../../hooks/useToggle"
 
-export default function Menu({ children }) {
-    /**
-     * Challenge:
-     * 1. Accept `onOpen` as a prop for the Menu component
-     * 2. Pass the onOpen prop as the value to Toggle's onToggle prop
-     * 3. In index.js, pass an onOpen prop to the Menu
-     *    component whose value is a function. 
-     *    Just use console.log() for now.
-     */
+const MenuContext = React.createContext()
+export { MenuContext }
+
+export default function Menu({ children, onOpen }) {
+    const [open, toggleOpen] = useToggle({
+        initialValue: true, 
+        onToggle: onOpen
+    })
+
     return (
-        <Toggle>
+        <MenuContext.Provider value={{ open, toggleOpen }}>
             <div className="menu">
                 {children}
             </div>
-        </Toggle>
+        </MenuContext.Provider>
     )
 }
