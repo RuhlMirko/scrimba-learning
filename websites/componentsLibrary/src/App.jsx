@@ -43,13 +43,37 @@ function App() {
 
         <section>
           <h2>Banners</h2>
-          <p>Coming soon...</p>
+          <p>Banner are a good additional information without hindering the content of a page. They are mostly suggestions of actions an user can take.</p>
+          <p>
+            The accepted values for color are: <span className='params'>[ success, error, warning, info ]</span>
+            <br />
+            The title prop accepts only a string that will be shown as the banner title.
+            <br />
+            The children prop accepts any valid React node that will be shown as the banner description.
+          </p>
           <div className='banners-container'>
             <ul>
-              <Banner color='success' title='Congratulations!'>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde omnis fuga est aperiam harum quae deleniti 
-              nemo officia reiciendis cumque?
-              </Banner>
+              <li>
+                <Banner color='success' title='Congratulations!'>                
+                </Banner>
+              </li>
+              
+              <li>
+                <Banner color='error' title='Error occurred'>
+                </Banner>
+              </li>
+
+              <li>
+                <Banner color='warning' title='Warning!'>
+                Please be aware that changes you make may not be saved. You can avoid this by regularly saving your work.
+                </Banner>
+              </li>
+
+              <li>
+                <Banner color='info' title='Did you know?'>
+                You can access additional settings in the preferences menu.
+                </Banner>
+              </li>
             </ul>
             <ul></ul>
           </div>

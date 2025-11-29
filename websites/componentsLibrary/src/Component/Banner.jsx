@@ -12,17 +12,17 @@ const styles = {
     error: {
         backgroundColor: 'rgba(248, 113, 113, 0.1)',
         borderColor: 'rgb(239, 68, 68)',
-        color: 'rgb(185, 28, 28)'
+        color: 'rgba(187, 53, 53, 1)'
     },
     warning: {
         backgroundColor: 'rgba(251, 191, 36, 0.1)',
         borderColor: 'rgb(234, 179, 8)',
-        color: 'rgb(202, 138, 4)'
+        color: 'rgba(201, 148, 35, 1)'
     },
     info: {
         backgroundColor: 'rgba(59, 130, 246, 0.1)',
         borderColor: 'rgb(59, 130, 246)',
-        color: 'rgb(29, 78, 216)'
+        color: 'rgba(74, 108, 201, 1)'
     }
 };
 
@@ -46,7 +46,7 @@ export default function Banners({children, color='success', title=''}) {
             <img src={icons[color] || icons.info} alt={`${color} icon`} />
             <div className='banner-content'>
                 <h3 className='title'>{capiTalizedTitle}</h3>
-                <p className='description'>{children}</p>
+                {children?<p className='description'>{children}</p>:null}                
             </div>
         </div>
     )
