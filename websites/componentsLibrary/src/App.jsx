@@ -44,7 +44,7 @@ function App() {
 
         <section>
           <h2>Banners</h2>
-          <p>Banner are a good additional information without hindering the content of a page. They are mostly suggestions of actions an user can take.</p>
+          <p>Banners are a good additional information without hindering the content of a page. They are mostly suggestions of actions an user can take.</p>
           <p>
             The accepted values for color are: <span className='params'>[ success, error, warning, info ]</span>
             <br />
