@@ -87,13 +87,14 @@ function App() {
           <p>
             The title prop accepts a <span className='params'>string</span> that will be shown as the card title.
             <br />
-            The description prop accepts a <span className='params'>string</span>  that will be shown as the card description.
+            The description prop accepts <span className='params'>children</span>  that will be shown as the card description.
             <br />
             The footer prop accepts a <span className='params'>string</span> that will be shown as the card footer button text. If no value is provided, it will default to <em>'Learn More'</em>.
           </p>
           <ul className='cards-container'>
-            <li><Cards title='Card title' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, consectetur possimus laboriosam fugit ea illum hic et culpa ducimus ad iusto impedit, exercitationem, similique magnam neque obcaecati facere dolorem? Error.'/></li>
-            <li><Cards title='Card title' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, consectetur possimus laboriosam fugit ea illum hic et culpa ducimus ad iusto impedit, exercitationem, similique magnam neque obcaecati facere dolorem? Error.'/></li>
+            <li><Cards title='Card title'>These cards take two parameters and one children <br /><span className='params'>[ title, children, footerText]</span></Cards></li>
+            <li><Cards title='Card title'>The text on these cards cut off at a certain height as to be consice and not clutter the component with too much text.
+              <br />Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea cum quaerat harum enim nemo deserunt repudiandae minus, libero dolorum tempora!</Cards></li>
           </ul>
         </section>
 
