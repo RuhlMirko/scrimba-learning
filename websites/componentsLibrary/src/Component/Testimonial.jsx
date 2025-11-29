@@ -5,9 +5,9 @@ export default function Testimonial({children, name, ocuppation, picture}) {
         <div className="info-container">
             <img src={picture} alt={`Photo portrait of ${name}`} />
             <div className="about">
+                <p>{children}</p>                
                 <h3>{name}</h3>
-                <h4>{ocuppation}</h4>            
-                <p>{children}</p>
+                <h4>Workcation, {ocuppation}</h4>            
             </div>
             
         </div>
@@ -18,7 +18,7 @@ export default function Testimonial({children, name, ocuppation, picture}) {
             <p>"{children}"</p>            
             <footer>
                 <h3>{name}</h3>
-                <h4>{ocuppation}</h4>            
+                <h4>Workcation, {ocuppation}</h4>            
             </footer>
         </div>
     )

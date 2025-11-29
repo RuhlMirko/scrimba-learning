@@ -275,15 +275,41 @@ body {
 .testimonials-container li {
   list-style-type: none;
   margin: 3em 0;
+  position: relative;
+}
+
+.testimonials-container {
+  padding: 0;
+  margin-top: 5em;
 }
 
 .info-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  gap: 20px;
+  gap: 5px;
   list-style-type: none;
-  padding: 0;
+  padding-top: 0;
+}
+.about {
+  max-width: 500px;
+  margin-top: 20px;
+}
+.about p {
+  max-width: 70ch;
+  font-size: 1.2em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+.about h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-size: 1em;
+}
+.about h4 {
+  margin-top: 0.2em;
+  color: #a3a3ff;
+  font-weight: 500;
 }
 
 .testimonials-container li {
@@ -294,10 +320,14 @@ body {
 }
 
 .testimonials-container img {
-  height: 220px;
-  width: 180px;
+  position: relative;
+  top: -20px;
+  left: 0;
+  height: 250px;
+  width: 200px;
   border-radius: 15px;
   object-fit: cover;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .no-picture {
@@ -314,7 +344,6 @@ body {
   color: #646cff;
 }
 .no-picture footer {
-  margin-top: 1.5em;
   display: flex;
   align-items: center;
 }
@@ -340,7 +369,10 @@ body {
   font-size: 1.1em;
   line-height: 1.6;
   font-weight: 500;
-  max-width: 70ch;
+  max-width: 65ch;
+}
+.no-picture h4 {
+  color: #747bff;
 }
 @media (prefers-color-scheme: light) {
   :root {
