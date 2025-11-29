@@ -1,6 +1,7 @@
 import React from 'react'
 import Badge from './Component/Badge'
 import Banner from './Component/Banner'
+import Cards from './Component/Cards'
 import '../index.css'
 
 function App() {
@@ -78,6 +79,22 @@ function App() {
             <ul></ul>
           </div>
           
+        </section>
+
+        <section>
+          <h2>Cards</h2>
+          <p>Cards are a flexible and extensible content container. They include options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
+          <p>
+            The title prop accepts a <span className='params'>string</span> that will be shown as the card title.
+            <br />
+            The description prop accepts a <span className='params'>string</span>  that will be shown as the card description.
+            <br />
+            The footer prop accepts a <span className='params'>string</span> that will be shown as the card footer button text. If no value is provided, it will default to <em>'Learn More'</em>.
+          </p>
+          <ul className='cards-container'>
+            <li><Cards title='Card title' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, consectetur possimus laboriosam fugit ea illum hic et culpa ducimus ad iusto impedit, exercitationem, similique magnam neque obcaecati facere dolorem? Error.'/></li>
+            <li><Cards title='Card title' description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, consectetur possimus laboriosam fugit ea illum hic et culpa ducimus ad iusto impedit, exercitationem, similique magnam neque obcaecati facere dolorem? Error.'/></li>
+          </ul>
         </section>
 
       </main>
