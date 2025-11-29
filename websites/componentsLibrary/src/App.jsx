@@ -106,7 +106,7 @@ function App() {
           <p>Testimonials are a great way to showcase user feedback and build trust with potential customers.</p>
           <ul className='testimonials-container'>
             <li><Testimonial name='May Andersons' ocuppation='CEO' picture={profilePicture}>"This enterprise has changed my life! beautyfull work space and vibes."</Testimonial></li>
-            <li><Testimonial name='John Doe' ocuppation='CTO'>"Excellent customer service and fantastic quality."</Testimonial></li>
+            <li><Testimonial name='John Doe' ocuppation='CTO'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, corrupti natus! Mollitia tenetur quam vero nihil voluptate dolorem commodi corrupti!</Testimonial></li>
           </ul>
         </section>
       </main>

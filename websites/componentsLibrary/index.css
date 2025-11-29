@@ -300,6 +300,48 @@ body {
   object-fit: cover;
 }
 
+.no-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+  gap: 0;
+  background-color: #f9f9f9;
+  color: #636363;
+}
+.no-picture span {
+  color: #646cff;
+}
+.no-picture footer {
+  margin-top: 1.5em;
+  display: flex;
+  align-items: center;
+}
+.no-picture footer h3 {
+  position: relative;
+  padding-right: 1em;
+}
+.no-picture footer h3::after {
+  content: "";
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%) rotate(15deg); /* Rotate the border */
+  width: 3px;
+  height: 100%;
+  background-color: #646cff;
+}
+.no-picture h3,
+.no-picture h4 {
+  padding: 0 0.5em;
+}
+.no-picture p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 70ch;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
