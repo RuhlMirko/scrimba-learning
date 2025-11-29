@@ -1,11 +1,12 @@
 import React from 'react'
 import Badge from './Component/Badge'
+import Banner from './Component/Banner'
 import '../index.css'
 
 function App() {
 
   return (
-    <body>      
+    <>      
       <header>
         <h1>Scrimba components library challenge</h1>  
       </header>
@@ -43,15 +44,20 @@ function App() {
         <section>
           <h2>Banners</h2>
           <p>Coming soon...</p>
-          <ul>
-            
-          </ul>
+          <div className='banners-container'>
+            <ul>
+              <Banner color='success' title='Congratulations!'>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde omnis fuga est aperiam harum quae deleniti 
+              nemo officia reiciendis cumque?
+              </Banner>
+            </ul>
+            <ul></ul>
+          </div>
+          
         </section>
 
       </main>
-      
-      
-    </body>
+    </>
   )
 }
 
