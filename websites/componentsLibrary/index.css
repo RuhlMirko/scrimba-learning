@@ -63,7 +63,7 @@ p {
 
 .params {
   font-family: "Courier New", Courier, monospace;
-  background-color: rgba(126, 132, 243, 0.158);
+  background-color: rgba(29, 35, 148, 0.158);
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -286,8 +286,8 @@ body {
 .info-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  gap: 5px;
+  justify-content: center;
+  gap: 1.4em;
   list-style-type: none;
   padding-top: 0;
 }
