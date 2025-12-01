@@ -386,26 +386,26 @@ body {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  font-style: italic;
 }
 
-.tooltip-container .row {
+#tooltip ul li {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .tooltip-text {
   visibility: hidden;
   width: max-content;
-  max-width: 200px;
+  max-width: 230px;
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   border-radius: 6px;
-  padding: 8px 16px;
+  padding: 12px 20px;
   position: absolute;
   z-index: 1;
   bottom: 150%;
-  left: 10%;
+  left: 5%;
   opacity: 0;
   transition: opacity 0.3s;
   display: flex;
@@ -420,7 +420,7 @@ body {
 .svg-icon {
   height: 32px;
   vertical-align: middle;
-  margin-right: 6px;
+  margin-right: 12px;
   fill: currentColor;
 }
 

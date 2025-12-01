@@ -121,8 +121,8 @@ function App() {
           <br />The title parameter accepts a <span className='params'>string</span> that will be shown as the tooltip title.</p>
           <ul className='tooltip-container'>
             <li className='row'>
-              <Tooltip color='primary' theme='dark' title='Archive Notes'>Hover over this text to see the tooltip.</Tooltip>
-              <Tooltip color='secondary' theme='light'>Hover over this text to see the tooltip.</Tooltip>
+              <Tooltip color='primary' theme='dark' title='Archive Notes'>Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ primary, dark and title ]</span></Tooltip>
+              <Tooltip color='secondary' theme='light'>Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ secondary, dark ]</span></Tooltip>
             </li>
           </ul>
 
