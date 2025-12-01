@@ -3,6 +3,7 @@ import Badge from './Component/Badge'
 import Banner from './Component/Banner'
 import Cards from './Component/Cards'
 import Testimonial from './Component/Testimonial'
+import Tooltip from './Component/Tooltip'
 import profilePicture from './assets/unsplashTestimonial.jpg'
 import '../index.css'
 
@@ -13,10 +14,11 @@ function App() {
     <>      
       <header>
         <h1>Scrimba components library challenge</h1>  
+        <p>A collection of reusable UI components built with React.</p>
       </header>
 
       <main>
-        <section>
+        <section id='Badge'>
           <h2>Badges</h2>
           <p>These badges components are good for small decorative info with very little text. The default value is a grey, squared badge.</p>
           <p>The accepted values for color are: <span className='params'>[ Gray, Red, Yellow, Green, Blue, Indigo, Purple, Pink ]</span> 
@@ -45,7 +47,7 @@ function App() {
           </ul>
         </section>
 
-        <section>
+        <section id='banner'>
           <h2>Banners</h2>
           <p>Banners are a good additional information without hindering the content of a page. They are mostly suggestions of actions an user can take.</p>
           <p>
@@ -84,7 +86,7 @@ function App() {
           
         </section>
 
-        <section>
+        <section id='card'>
           <h2>Cards</h2>
           <p>Cards are a flexible and extensible content container. They include options for headers and footers, a wide variety of content, contextual background colors, and powerful display options.</p>
           <p>
@@ -101,13 +103,29 @@ function App() {
           </ul>
         </section>
 
-        <section>
+        <section id='testimonial'>
           <h2>Testimonials</h2>
           <p>Testimonials are a great way to showcase user feedback and build trust with potential customers.</p>
           <ul className='testimonials-container'>
             <li><Testimonial name='May Andersons' ocuppation='CEO' picture={profilePicture}>These testimonials accepts three parameters <span className='params'>[name, ocuppation, picture]</span> and one <span className='params'>children</span>.</Testimonial></li>
-            <li><Testimonial name='John Doe' ocuppation='CTO'>If no picture is given as a parameter this testimonial style will show up. These still need the rest of their parameters.</Testimonial></li>
+            <li><Testimonial name='John Doe' ocuppation='CTO'>If no picture is given as a parameter this component style will be used. These still need the rest of their parameters.</Testimonial></li>
           </ul>
+        </section>
+
+        <section id='tooltip'>
+          <h2>Tooltips</h2>   
+          <p>Tooltips are a common UI element used to provide additional information when users hover over or focus on an element. They are typically used to display brief descriptions or explanations of buttons, icons, or other interactive elements.</p>
+          <p>This tooltip component can be customized with different positions and colors.
+          <br />The accepted values for color are: <span className='params'>[ primary, secondary, info, success ]</span>
+          <br />The accepted values for theme are <span className='params'>[ dark, light ]</span>
+          <br />The title parameter accepts a <span className='params'>string</span> that will be shown as the tooltip title.</p>
+          <ul className='tooltip-container'>
+            <li className='row'>
+              <Tooltip color='primary' theme='dark' title='Archive Notes'>Hover over this text to see the tooltip.</Tooltip>
+              <Tooltip color='secondary' theme='light'>Hover over this text to see the tooltip.</Tooltip>
+            </li>
+          </ul>
+
         </section>
       </main>
     </>

@@ -374,6 +374,56 @@ body {
 .no-picture h4 {
   color: #747bff;
 }
+
+.tooltip-container {
+  margin-top: 2em;
+  display: flex;
+  gap: 2em;
+  list-style-type: none;
+}
+
+.tooltip-target {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  font-style: italic;
+}
+
+.tooltip-container .row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: max-content;
+  max-width: 200px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 16px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 10%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+}
+
+.tooltip-target:hover .tooltip-text,
+.tooltip-target:focus .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.svg-icon {
+  height: 32px;
+  vertical-align: middle;
+  margin-right: 6px;
+  fill: currentColor;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
