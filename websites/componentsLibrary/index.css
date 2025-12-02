@@ -435,6 +435,24 @@ body {
   fill: currentColor;
 }
 
+.toast-container {
+  display: flex;
+  gap: 1.5em;
+  margin-top: 2em;
+  list-style-type: none;
+}
+.toast-container li button {
+  min-width: 200px;
+  height: 60px;
+  padding-bottom: 1em;
+}
+.toast-container button {
+  transition: transform 0.3s ease;
+}
+.toast-container button:hover {
+  transform: translateY(-5px);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

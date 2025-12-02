@@ -4,6 +4,7 @@ import Banner from './Component/Banner'
 import Cards from './Component/Cards'
 import Testimonial from './Component/Testimonial'
 import Tooltip from './Component/Tooltip'
+import Toast from './Component/Toast'
 import profilePicture from './assets/unsplashTestimonial.jpg'
 import '../index.css'
 
@@ -138,6 +139,25 @@ function App() {
             </li>
           </ul>
 
+        </section>
+
+        <section id='toast'>
+          <h2>Toast</h2>
+          <p>Toast are pop-ups that show relevant information without obscuring the website.</p>
+          <ul className='toast-container'>
+            <li>
+              <button>Action was a success.<Toast color='success' title='Success!'></Toast></button>              
+            </li>
+            <li>
+              <button>Throw Error.<Toast color='error' title='Error!'></Toast></button>
+            </li>
+            <li>
+              <button>Warn user about something.<Toast color='warning' title='Warning!'></Toast></button>
+            </li>
+            <li>
+              <button>Give useful information revelant to the user.<Toast color='info' title='Information!'></Toast></button>
+            </li>
+          </ul>
         </section>
       </main>
     </>
