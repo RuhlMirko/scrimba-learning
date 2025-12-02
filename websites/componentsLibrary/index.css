@@ -399,15 +399,14 @@ body {
 .tooltip-text {
   visibility: hidden;
   width: max-content;
-  max-width: 230px;
-  background-color: rgba(0, 0, 0, 0.75);
+  max-width: 330px;
   color: #fff;
   border-radius: 6px;
-  padding: 12px 20px;
+  padding: 12px 20px 16px;
   position: absolute;
   z-index: 1;
-  bottom: 150%;
-  left: 5%;
+  bottom: 120%;
+  left: 0%;
   opacity: 0;
   transition: opacity 0.3s;
   display: flex;
@@ -417,6 +416,16 @@ body {
 .tooltip-target:focus .tooltip-text {
   visibility: visible;
   opacity: 1;
+}
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 101%;
+  left: 10px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: inherit; /* This will inherit from the tooltip background */
 }
 
 .svg-icon {

@@ -120,13 +120,21 @@ function App() {
           <br />The accepted values for theme are <span className='params'>[ dark, light ]</span>
           <br />The title parameter accepts a <span className='params'>string</span> that will be shown as the tooltip title.</p>
           <ul className='tooltip-container'>
-            <li className='row'>
+            <li >
               <Tooltip color='primary' theme='dark' title='Archive Notes'>Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ primary, dark, title ]</span></Tooltip>
               <Tooltip color='primary' theme='light'>Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ primary, light ]</span></Tooltip>
             </li>
-            <li className='row'>
+            <li >
               <Tooltip color='secondary' theme='dark' >Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ secondary, dark ]</span></Tooltip>              
               <Tooltip color='secondary' theme='light' title='Long Title as an example'>Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ secondary, light, title ]</span></Tooltip>
+            </li>
+            <li >
+              <Tooltip color='success' theme='dark' >Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ success, dark ]</span></Tooltip>              
+              <Tooltip color='success' theme='light' title='Long Title as an example'>Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ success, light, title ]</span></Tooltip>
+            </li>
+            <li >
+              <Tooltip color='info' theme='dark' >Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ success, dark ]</span></Tooltip>              
+              <Tooltip color='info' theme='light' title='Long Title as an example'>Hover over this text to see the tooltip. <br /> Params used: <span className='params'>[ success, light, title ]</span></Tooltip>
             </li>
           </ul>
 
