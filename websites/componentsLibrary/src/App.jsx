@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Badge from './Component/Badge'
 import Banner from './Component/Banner'
 import Cards from './Component/Cards'
@@ -10,6 +10,20 @@ import '../index.css'
 
 
 function App() {
+  const [toasts, setToasts] = useState({
+    success: false,
+    error: false,
+    warning: false,
+    info: false
+  })
+
+  const showToast = (type) => {
+    setToasts(prev => ({ ...prev, [type]: true }))
+  }
+
+  const hideToast = (type) => {
+    setToasts(prev => ({ ...prev, [type]: false }))
+  }
 
   return (
     <>      
@@ -143,23 +157,68 @@ function App() {
 
         <section id='toast'>
           <h2>Toast</h2>
-          <p>Toast are pop-ups that show relevant information without obscuring the website.</p>
+          <p>Toast are pop-ups that show relevant information without obscuring the website. Click the buttons to trigger toast notifications that will automatically dismiss after 3 seconds, or click the × to close them manually.</p>
+          <p>
+            The accepted values for color are: <span className='params'>[ success, error, warning, info ]</span>
+            <br />
+            The title prop accepts a <span className='params'>string</span> that will be shown as the toast title.
+            <br />
+            The duration prop accepts a <span className='params'>number</span> (in milliseconds) for auto-dismiss. Default is 3000ms.
+            <br />
+            The onClose prop is a <span className='params'>function</span> that gets called when the toast closes.
+          </p>
           <ul className='toast-container'>
             <li>
-              <button>Action was a success.</button>              
-              <Toast color='success' title='Success!'>Your work has been saved</Toast>
+              <button onClick={() => showToast('success')}>Show Success Toast</button>              
+              {toasts.success && (
+                <Toast 
+                  color='success' 
+                  title='Success!' 
+                  onClose={() => hideToast('success')}
+                  duration={3000}
+                >
+                  Your work has been saved
+                </Toast>
+              )}
             </li>
             <li>
-              <button>Throw Error.</button>
-              <Toast color='error' title='Error!'>Please re-save your work again</Toast>
+              <button onClick={() => showToast('error')}>Show Error Toast</button>
+              {toasts.error && (
+                <Toast 
+                  color='error' 
+                  title='Error!' 
+                  onClose={() => hideToast('error')}
+                  duration={3000}
+                >
+                  Please re-save your work again
+                </Toast>
+              )}
             </li>
             <li>
-              <button>Warn user about something.</button>
-              <Toast color='warning' title='Warning!'>A network erros was detected</Toast>
+              <button onClick={() => showToast('warning')}>Show Warning Toast</button>
+              {toasts.warning && (
+                <Toast 
+                  color='warning' 
+                  title='Warning!' 
+                  onClose={() => hideToast('warning')}
+                  duration={3000}
+                >
+                  A network error was detected
+                </Toast>
+              )}
             </li>
             <li>
-              <button>Give useful information revelant to the user.</button>
-              <Toast color='info' title='Information!'>Please read updated information</Toast>
+              <button onClick={() => showToast('info')}>Show Info Toast</button>
+              {toasts.info && (
+                <Toast 
+                  color='info' 
+                  title='Information!' 
+                  onClose={() => hideToast('info')}
+                  duration={3000}
+                >
+                  Please read updated information
+                </Toast>
+              )}
             </li>
           </ul>
         </section>
