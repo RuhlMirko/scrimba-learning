@@ -380,20 +380,23 @@ body {
   flex-direction: column;
   gap: 2em;
   list-style-type: none;
+  padding: 0;
 }
 
 .tooltip-target {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  margin-bottom: 1em;
 }
 
 #tooltip ul li {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding-block: 1em;
 }
 
 .tooltip-text {
@@ -435,15 +438,22 @@ body {
   fill: currentColor;
 }
 
+#toast {
+  position: relative;
+}
+
 .toast-container {
+  /* position: relative; */
   display: flex;
   gap: 1.5em;
   margin-top: 2em;
   list-style-type: none;
+  flex-wrap: wrap;
 }
 .toast-container li button {
   min-width: 200px;
   height: 60px;
+  min-height: fit-content;
   padding-bottom: 1em;
 }
 .toast-container button {
@@ -451,6 +461,18 @@ body {
 }
 .toast-container button:hover {
   transform: translateY(-5px);
+}
+
+.toast {
+  position: fixed;
+  top: 2vh;
+  right: 2vw;
+  padding: 1em 3em 1em 1em;
+  border-radius: 15px;
+  border: 1px solid white;
+  color: #f2f2f2ff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
 }
 
 @media (prefers-color-scheme: light) {

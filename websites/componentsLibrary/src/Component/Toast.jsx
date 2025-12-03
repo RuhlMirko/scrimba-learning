@@ -24,7 +24,16 @@ const toastStyles = {
 
 
 export default function Toast({children, color='info', title='Notification'}) {
+    const stylesUsed = {
+        backgroundColor: toastStyles[color]?.backgroundColor || toastStyles['info'].backgroundColor,
+        color: toastStyles[color]?.color || toastStyles['info'].color,
+        border: toastStyles[color]?.border || toastStyles['info'].border
+    };
 
-
-        return (<>{children}</>)
+    return (
+        <div className="toast" style={stylesUsed}>
+            <h4>{title}</h4>
+            <p>{children}</p>            
+        </div>
+    )
 }

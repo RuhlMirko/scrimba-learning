@@ -146,16 +146,20 @@ function App() {
           <p>Toast are pop-ups that show relevant information without obscuring the website.</p>
           <ul className='toast-container'>
             <li>
-              <button>Action was a success.<Toast color='success' title='Success!'></Toast></button>              
+              <button>Action was a success.</button>              
+              <Toast color='success' title='Success!'>Your work has been saved</Toast>
             </li>
             <li>
-              <button>Throw Error.<Toast color='error' title='Error!'></Toast></button>
+              <button>Throw Error.</button>
+              <Toast color='error' title='Error!'>Please re-save your work again</Toast>
             </li>
             <li>
-              <button>Warn user about something.<Toast color='warning' title='Warning!'></Toast></button>
+              <button>Warn user about something.</button>
+              <Toast color='warning' title='Warning!'>A network erros was detected</Toast>
             </li>
             <li>
-              <button>Give useful information revelant to the user.<Toast color='info' title='Information!'></Toast></button>
+              <button>Give useful information revelant to the user.</button>
+              <Toast color='info' title='Information!'>Please read updated information</Toast>
             </li>
           </ul>
         </section>
