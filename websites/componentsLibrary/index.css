@@ -466,6 +466,14 @@ body {
   transform: none;
 }
 
+.toast-queue {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 .toast {
   position: fixed;
   top: 2vh;
@@ -478,6 +486,20 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 1em;
+  pointer-events: auto;
+  transition: top 0.3s ease, opacity 0.3s ease;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .toast img {
   align-self: start;

@@ -10,19 +10,20 @@ import '../index.css'
 
 
 function App() {
-  const [toasts, setToasts] = useState({
-    success: false,
-    error: false,
-    warning: false,
-    info: false
-  })
+  const [toastQueue, setToastQueue] = useState([])
 
-  const showToast = (type) => {
-    setToasts(prev => ({ ...prev, [type]: true }))
+  const showToast = (type, title, message) => {
+    const newToast = {
+      id: Date.now(),
+      type,
+      title,
+      message
+    }
+    setToastQueue(prev => [...prev, newToast])
   }
 
-  const hideToast = (type) => {
-    setToasts(prev => ({ ...prev, [type]: false }))
+  const hideToast = (id) => {
+    setToastQueue(prev => prev.filter(toast => toast.id !== id))
   }
 
   return (
@@ -157,7 +158,7 @@ function App() {
 
         <section id='toast'>
           <h2>Toast</h2>
-          <p>Toast are pop-ups that show relevant information without obscuring the website. Click the buttons to trigger toast notifications that will automatically dismiss after 3 seconds, or click the × to close them manually.</p>
+          <p>Toast are pop-ups that show relevant information without obscuring the website. Click the buttons to trigger toast notifications that will automatically dismiss after 3 seconds, or click the × to close them manually. Multiple toasts will stack vertically in a queue.</p>
           <p>
             The accepted values for color are: <span className='params'>[ success, error, warning, info ]</span>
             <br />
@@ -169,58 +170,34 @@ function App() {
           </p>
           <ul className='toast-container'>
             <li>
-              <button onClick={() => showToast('success')}>Show Success Toast</button>              
-              {toasts.success && (
-                <Toast 
-                  color='success' 
-                  title='Success!' 
-                  onClose={() => hideToast('success')}
-                  duration={3000}
-                >
-                  Your work has been saved
-                </Toast>
-              )}
+              <button onClick={() => showToast('success', 'Success!', 'Your work has been saved')}>Show Success Toast</button>              
             </li>
             <li>
-              <button onClick={() => showToast('error')}>Show Error Toast</button>
-              {toasts.error && (
-                <Toast 
-                  color='error' 
-                  title='Error!' 
-                  onClose={() => hideToast('error')}
-                  duration={3000}
-                >
-                  Please re-save your work again
-                </Toast>
-              )}
+              <button onClick={() => showToast('error', 'Error!', 'Please re-save your work again')}>Show Error Toast</button>
             </li>
             <li>
-              <button onClick={() => showToast('warning')}>Show Warning Toast</button>
-              {toasts.warning && (
-                <Toast 
-                  color='warning' 
-                  title='Warning!' 
-                  onClose={() => hideToast('warning')}
-                  duration={3000}
-                >
-                  A network error was detected
-                </Toast>
-              )}
+              <button onClick={() => showToast('warning', 'Warning!', 'A network error was detected')}>Show Warning Toast</button>
             </li>
             <li>
-              <button onClick={() => showToast('info')}>Show Info Toast</button>
-              {toasts.info && (
-                <Toast 
-                  color='info' 
-                  title='Information!' 
-                  onClose={() => hideToast('info')}
-                  duration={3000}
-                >
-                  Please read updated information
-                </Toast>
-              )}
+              <button onClick={() => showToast('info', 'Information!', 'Please read updated information')}>Show Info Toast</button>
             </li>
           </ul>
+
+          {/* Toast Queue Container */}
+          <div className='toast-queue'>
+            {toastQueue.map((toast, index) => (
+              <Toast 
+                key={toast.id}
+                color={toast.type} 
+                title={toast.title} 
+                onClose={() => hideToast(toast.id)}
+                duration={3000}
+                style={{ top: `${2 + index * 12}vh` }}
+              >
+                {toast.message}
+              </Toast>
+            ))}
+          </div>
         </section>
       </main>
     </>

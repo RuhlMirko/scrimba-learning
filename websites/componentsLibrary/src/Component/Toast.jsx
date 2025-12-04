@@ -30,11 +30,12 @@ const toastStyles = {
 
 
 
-export default function Toast({children, color='info', title='Notification', onClose, duration=3000}) {
+export default function Toast({children, color='info', title='Notification', onClose, duration=3000, style={}}) {
     const stylesUsed = {
         backgroundColor: toastStyles[color]?.backgroundColor || toastStyles['info'].backgroundColor,
         color: toastStyles[color]?.color || toastStyles['info'].color,
-        border: toastStyles[color]?.border || toastStyles['info'].border
+        border: toastStyles[color]?.border || toastStyles['info'].border,
+        ...style
     };
 
     useEffect(() => {
