@@ -9,18 +9,8 @@ export default function Login() {
 
     const location = useLocation()
     const navigate = useNavigate()
-    
-    /**
-     * Challenge: make it so after login, we go to the page
-     * we originally were trying to go to instead of always
-     * to the /host route. If the user wasn't redirected to
-     * the login page (i.e. they clicked the link to the login
-     * page instead of being redirected there from a protected 
-     * route) they should still be redirected to /host by default.
-     * 
-     * Hint: you'll need to add code to AuthRequired.jsx and
-     * Login.jsx.
-     */
+
+    const from = location.state?.from || "/host";
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -29,7 +19,7 @@ export default function Login() {
             .then(data => {
                 setError(null)
                 localStorage.setItem("loggedin", true)
-                navigate("/host", { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(err => {
                 setError(err)
@@ -50,12 +40,12 @@ export default function Login() {
     return (
         <div className="login-container">
             {
-                location.state ?.message &&
+                location.state?.message &&
                     <h3 className="login-error">{location.state.message}</h3>
             }
             <h1>Sign in to your account</h1>
             {
-                error ?.message &&
+                error?.message &&
                     <h3 className="login-error">{error.message}</h3>
             }
 
