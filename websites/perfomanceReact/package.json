@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s051pto",
-  "description": "https://scrimba.com/frontend-path-c0j/~014s",
+  "name": "Scrim-s051ov1",
+  "description": "https://scrimba.com/frontend-path-c0j/~0150",
   "scripts": {
     "start": "vite",
     "dev": "vite",
@@ -10,6 +10,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "@faker-js/faker": "8.0.1",
     "vite": "latest"
   },
   "devDependencies": {
