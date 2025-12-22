@@ -6,6 +6,7 @@ import productsData from "./data"
 function App() {
   const [count, setCount] = React.useState(0)
   const [darkMode, setDarkMode] = React.useState(false)
+  const [selectedProduct, setSelectedProduct] = React.useState(null)
 
   function increment() {
     setCount(prevCount => prevCount + 1)
@@ -15,11 +16,17 @@ function App() {
     setCount(prevCount => prevCount - 1)
   }
 
-  const productStyles = {
-    backgroundColor: darkMode ? "#2b283a" : "whitesmoke",
-    color: darkMode ? "white" : "#2b283a"
-  }
+  const productStyles = React.useMemo(() => {
+    return {
+      backgroundColor: darkMode ? "#2b283a" : "whitesmoke",
+      color: darkMode ? "white" : "#2b283a"
+    }
+  }, [darkMode])
 
+  const selectedStyles = {
+    backgroundColor: "#93c47d"
+  }
+  
   return (
     <>
       <h1>The current count is {count}</h1>
@@ -37,9 +44,14 @@ function App() {
       <br />
       <div className="products-list">
         {
-          productsData.map(product => (
-            <Product key={product.id} product={product} style={productStyles} />
-          ))
+          productsData.map(product => {
+            const isSelected = product.id === selectedProduct
+            return <Product
+              key={product.id}
+              product={product}
+              style={isSelected ? { ...productStyles, ...selectedStyles } : productStyles}
+            />
+          })
         }
       </div>
     </>
