@@ -1,4 +1,6 @@
 ---
+import Section from "./Section.astro";
+
 const heading = "My Projects";
 const cta = { text: 'View All', href: '/projects' };
 
@@ -29,7 +31,7 @@ const projects = [
     }
   ]
   ---
-<section>
+<Section dark={true}>
   <div class="section-header">
       <h2>
         {heading}
@@ -50,7 +52,7 @@ const projects = [
     <!-- dynamically render project cards -->
     <!-- each card has a class of card, an image, and an h3 that links to the liveSiteURL -->
   </div>
-</section>
+</Section>
 
 <style>
 
