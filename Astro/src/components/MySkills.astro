@@ -1,0 +1,15 @@
+---
+
+const heading = "My Skills"
+const skills = ['HTML', 'CSS', 'JavaScript'];
+---
+
+<section>
+	<h2>{heading}</h2>
+	<ul>
+	   { skills.map( skill => (
+        <li>{skill}</li>
+      ))
+     }
+	</ul>
+</section>
