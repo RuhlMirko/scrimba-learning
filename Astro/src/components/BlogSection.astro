@@ -6,30 +6,31 @@ import HorizontalSeparator from './HorizontalSeparator.astro';
 import BlogCard from './BlogCard.astro';
 import ButtonLink from './ButtonLink.astro';
 
-//query blog posts
+const posts = await getCollection('blog');
 const heading = 'Blog';
 const cta = {text: 'View blog', href:"/blog"};
 ---
 
-<!-- wrap with Section -->
-<!-- add section header -->
-
-<!-- replace hard-coded blog post with dynamically rendered posts -->
-<div class="blog-card">
-  <h3>Blog Title</h3>
-  <div class="metadata">
-    <p class="date">02/07/2025</p>
-    <span class="vertical-separator"></span>
-    <p class="tags">{['frontend', 'backend'].join(", ")}</p>
-  </div>
-  <p class="description">This is the description</p>
-  <ButtonLink
-    href={`/blog/post1`}
-    text="Read article"
-    variant="secondary"
-  />
-</div>
-
+<Section>
+  <SectionHeader heading={heading} cta={cta}/>
+  {posts.map(post => (
+    <div class="blog-card">
+      <h3>{post.data.title}</h3>
+      <div class="metadata">
+        <p class="date">{post.data.date}</p>
+        <span class="vertical-separator"></span>
+        <p class="tags">{post.data.tags.join(", ")}</p>
+      </div>
+      <p class="description">{post.data.description}</p>
+      <ButtonLink
+        href={`/blog/${post.id}`}
+        text="Read article"
+        variant="secondary"
+      />
+    </div>
+    <HorizontalSeparator/>
+  ))}
+</Section>
 <style>
   .blog-card {
     h3 {
