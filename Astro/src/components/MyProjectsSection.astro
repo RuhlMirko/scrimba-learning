@@ -1,7 +1,9 @@
 ---
 import Section from "./Section.astro";
 import SectionHeader from "./SectionHeader.astro"
-import projects from "../data/projects.json";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection('project');
 
 const heading = "My Projects";
 const cta = { text: 'View All', href: '/projects' };
@@ -13,13 +15,11 @@ const cta = { text: 'View All', href: '/projects' };
     {
       projects.map(project => (
         <div class="card">
-          <img src={project.image} alt={project.title}/>
-          <h3><a href={project.liveSiteURL}>{project.title}</a></h3>
+          <img src={project.data.image} alt={project.data.title}/>
+          <h3><a href={project.data.liveSiteURL}>{project.data.title}</a></h3>
         </div>
       ))
     }
-    <!-- dynamically render project cards -->
-    <!-- each card has a class of card, an image, and an h3 that links to the liveSiteURL -->
   </div>
 </Section>
 
