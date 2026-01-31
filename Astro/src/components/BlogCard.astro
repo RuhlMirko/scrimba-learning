@@ -1,12 +1,12 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import ButtonLink from './ButtonLink.astro';
 
 interface Props {
-  blog: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog">;
 }
 
-//access blog prop
-const {blog} = Astro.props;
+const {post} = Astro.props;
 ---
 
 <div class="blog-card">
