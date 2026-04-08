@@ -25,7 +25,7 @@ export default function App() {
     const conditionSix   = !currentNum[0] && !previousNum[0] &&  operation &&  result[0]
 
     function handleClick(event) {
-      
+            
         const numFromClick      = event.target.dataset.number
         const opFromClick       = event.target.dataset.operation
         const otherFromClick    = event.target.dataset.other
@@ -89,7 +89,9 @@ export default function App() {
 ---------------Write your code for task 1 below.------------------------------------------------*/  
           
           
-          
+		setCurrentCalc(prevCalc => {
+			return { ...prevCalc, currentNum: [...prevCalc.currentNum, numFromClick] }
+		})
           
           
    
@@ -106,7 +108,7 @@ export default function App() {
          which are saved in INITIAL_STATE (line 9 above).
              
 ---------------Write your code for task 2 below.------------------------------------------------*/        
-          
+          setCurrentCalc({...INITIAL_STATE, currentNum: [numFromClick]})
           
           
           
@@ -132,7 +134,9 @@ export default function App() {
                        
 ---------------Write your code for task 3 below.------------------------------------------------*/
               
-              
+            setCurrentCalc(prevCalc => {
+				return {previousNum: [prevCalc.result], result: [], currentNum: [numFromClick]}
+			})
               
 
 
