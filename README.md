@@ -1,32 +1,66 @@
-# Scrimba Projects
+# Scrimba Learning Projects
 
-This repo was made with the intent to archive the projects I made in the [Scrimba website](https://scrimba.com/allcourses).
+This repository is a personal archive of projects I built while learning on [Scrimba](https://scrimba.com/allcourses). It includes static HTML/CSS/JS sites, React apps, and framework experiments.
 
-The website is structured in the following manner:
+## Live Demo
 
+You can view a deployed version here: [mirkoruhlscrimba.netlify.app](https://mirkoruhlscrimba.netlify.app/)
+
+## Repository Structure
+
+The project is organized into multiple learning tracks and experiments:
+
+```text
+.
+|- index.html / index.css / index.js
+|- res/                    # Shared styles and assets
+|- websites/               # Vanilla web projects
+|- components/             # Reusable React component exercises
+|- react-challenge/        # React mini-projects/challenges
+|- first-react/            # Vite + React starter work
+|- Astro/                  # Astro experiments
+|- node/                   # Node.js practice
 ```
- Main Page:
-    [Html] <<Index>>
-    res:
-        [CSS] <<Stylesheet>>
-        <<Shared Images>>
-    websites:
-        [directory] <<Name of project>>:
-            [Html] <<Main Page of the project>>
-            [CSS] <<Stylesheet>>
 
+## Running Projects Locally
+
+Because this repository contains many independent projects, run each one from its own folder.
+
+### Static HTML/CSS/JS projects
+
+Open the relevant `index.html` file directly in your browser, or use a local server extension.
+
+### React, Astro, or Node projects
+
+1. Open a terminal in the project folder.
+2. Install dependencies:
+
+```bash
+npm install
 ```
 
-You can look at a live demo at this [Netlify website](https://mirkoruhlscrimba.netlify.app/)
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+Some projects may use different scripts (for example, `npm start`). Check that project's `package.json` if needed.
+
+## Why This Repo Exists
+
+- Track learning progress over time
+- Keep completed Scrimba exercises in one place
+- Revisit earlier projects for refactoring and improvements
 
 ## About Scrimba
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+Scrimba is an online coding platform focused on interactive, practical learning.
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+- [All Courses](https://scrimba.com/allcourses)
+- [Frontend Developer Career Path](https://scrimba.com/learn/frontend)
+- [Scrimba Pro](https://scrimba.com/pricing)
 
-Happy Coding!
+## Notes
+
+This repository is actively evolving as I continue learning and building.
