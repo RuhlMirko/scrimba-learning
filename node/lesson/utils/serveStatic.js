@@ -1,29 +1,31 @@
 import path from 'node:path'
 import fs from 'node:fs/promises'
+import { sendResponse } from './sendResponse.js'
+import { getContentType } from './getContentType.js'
 
-export function serveStatic(baseDir) {
-  
-  const filePath = path.join(baseDir, 'public', 'index.html')
+export async function serveStatic(req, res, baseDir) {
 
-/*
-Challenge 1: 
+  const publicDir = path.join(baseDir, 'public')
+  const filePath = path.join(
+    publicDir,
+    req.url === '/' ? 'index.html' : req.url
+  )
 
-- Store index.html as a buffer in a const ‘content’. 
-- As this is an async process, do this inside a try/catch block.
-- For now, just log the error in the catch block.
-- You will need to change something to do with the function declaration. What is it?
+  const ext = path.extname(filePath)
 
-*/
+  const contentType = getContentType(ext)
 
-/*
-Challenge 3:
+  try {
+    const content = await fs.readFile(filePath)
+    sendResponse(res, 200, contentType, content)
 
-- Import sendResponse() and use it to serve index.html. 
-  Pass in all of the information sendResponse() is expecting.
-  serveStatic() will need another param. What is it?
-
-  Make any changes necessary in server.js and delete any unneeded code.
-
-*/
+  } catch (err) {
+    if (err.code === 'ENOENT') { 
+      const content = await fs.readFile(path.join(publicDir, '404.html'))
+      sendResponse(res, 404, 'text/html', content)
+    } else {
+      sendResponse(res, 500, 'text/html', '<html><h1>Server Error: ${err.code}</h1></html>')
+    }
+  }
 
 }
