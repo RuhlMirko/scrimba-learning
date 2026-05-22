@@ -1,6 +1,6 @@
 # Tenzies
 
-A small React game built with Vite.
+A fast-paced React dice game where you hold matching dice, race the timer, and try to beat your best score.
 
 ## Run Locally
 
