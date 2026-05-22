@@ -1,16 +1,60 @@
-# React + Vite
+# Tenzies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A small React game built with Vite.
 
-Currently, two official plugins are available:
+## Run Locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1) Prerequisites
 
-## React Compiler
+- Node.js 18+ (Node.js 20 LTS recommended)
+- npm (comes with Node.js)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Check installed versions:
 
-## Expanding the ESLint configuration
+```bash
+node -v
+npm -v
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2) Install dependencies
+
+From this project folder, run:
+
+```bash
+npm install
+```
+
+### 3) Start the development server
+
+```bash
+npm run dev
+```
+
+Vite will print a local URL (usually `http://localhost:5173`). Open that URL in your browser.
+
+### 4) Build for production
+
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `dist` folder.
+
+### 5) Preview the production build locally
+
+```bash
+npm run preview
+```
+
+## Useful Scripts
+
+- `npm run dev` - start local dev server with hot reload
+- `npm run build` - create production build
+- `npm run preview` - preview production build locally
+- `npm run lint` - run ESLint checks
+
+## Troubleshooting
+
+- If `npm install` fails, delete `node_modules` and `package-lock.json`, then run `npm install` again.
+- If the port is already in use, Vite may automatically choose another port and print it in the terminal.
+- If commands are not recognized, restart your terminal after installing Node.js.
