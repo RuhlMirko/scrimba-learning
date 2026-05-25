@@ -1,16 +1,64 @@
-# React + Vite
+# Components Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Small React + Vite project for building and experimenting with UI components.
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Then open the local URL printed by Vite (usually `http://localhost:5173`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run Locally
 
-## Expanding the ESLint configuration
+### 1. Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js 20+ (LTS recommended)
+- npm (comes with Node.js)
+
+Check versions:
+
+```bash
+node -v
+npm -v
+```
+
+### 2. Install dependencies
+
+From this folder (`websites/componentsLibrary`), run:
+
+```bash
+npm install
+```
+
+### 3. Start the dev server
+
+```bash
+npm run dev
+```
+
+Vite will print a local URL (usually `http://localhost:5173`). Open it in your browser.
+
+## Available Scripts
+
+- `npm run dev`: Start local development server with hot reload.
+- `npm run build`: Create an optimized production build in `dist/`.
+- `npm run preview`: Serve the production build locally for testing.
+- `npm run lint`: Run ESLint checks.
+
+## Local Production Preview
+
+To verify the production bundle on your machine:
+
+```bash
+npm run build
+npm run preview
+```
+
+## Troubleshooting
+
+- If dependencies fail to install, delete `node_modules` and `package-lock.json`, then run `npm install` again.
+- If the dev server port is busy, Vite will suggest another port automatically.
+- If `npm` is not recognized, reinstall Node.js from the official site and restart your terminal.
