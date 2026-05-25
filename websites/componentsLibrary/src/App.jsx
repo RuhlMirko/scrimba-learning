@@ -29,8 +29,9 @@ function App() {
   return (
     <>      
       <header>
-        <h1>Scrimba components library challenge</h1>  
-        <p>A collection of reusable UI components built with React.</p>
+        <h1>React <span>UI</span></h1>  
+        <h2>Component Library</h2>
+        <p>A collection of reusable UI components built with React based on Scrimba.com solo project.</p>
       </header>
 
       <main>
