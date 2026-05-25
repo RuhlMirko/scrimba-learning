@@ -5,6 +5,7 @@ import Cards from './Component/Cards'
 import Testimonial from './Component/Testimonial'
 import Tooltip from './Component/Tooltip'
 import Toast from './Component/Toast'
+import Navbar from './Component/Navbar'
 import profilePicture from './assets/unsplashTestimonial.jpg'
 import '../index.css'
 
@@ -29,9 +30,11 @@ function App() {
   return (
     <>      
       <header>
+        <Navbar />
         <h1>React <span>UI</span></h1>  
         <h2>Component Library</h2>
         <p>A collection of reusable UI components built with React based on Scrimba.com solo project.</p>
+        
       </header>
 
       <main>
