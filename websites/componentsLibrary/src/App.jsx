@@ -35,7 +35,7 @@ function App() {
       </header>
 
       <main>
-        <section id='Badge'>
+        <section id='badge'>
           <h2>Badges</h2>
           <p>These badges components are good for small decorative info with very little text. The default value is a grey, squared badge.</p>
           <p>The accepted values for color are: <span className='params'>[ Gray, Red, Yellow, Green, Blue, Indigo, Purple, Pink ]</span> 

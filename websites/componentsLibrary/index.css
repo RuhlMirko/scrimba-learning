@@ -1,11 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap");
 
+@property --bg-grid-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 160deg;
+}
+
+@property --bg-main-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 140deg;
+}
+
 :root {
   --bg-0: #03060d;
   --bg-1: #071122;
   --surface-0: rgba(8, 15, 28, 0.92);
   --surface-1: rgba(12, 21, 38, 0.86);
   --surface-2: rgba(18, 30, 54, 0.9);
+  --surface-3: rgba(1, 13, 36, 0.548);
   --line: rgba(133, 167, 224, 0.2);
   --line-strong: rgba(145, 187, 255, 0.36);
   --text-1: #f7fbff;
@@ -22,6 +35,8 @@
   --radius-sm: 10px;
   --shadow-card: 0 18px 50px rgba(1, 6, 18, 0.55);
   --shadow-float: 0 10px 30px rgba(9, 31, 70, 0.5);
+  --bg-grid-angle: 160deg;
+  --bg-main-angle: 140deg;
 }
 
 * {
@@ -58,16 +73,64 @@ body {
       transparent 42%
     ),
     repeating-linear-gradient(
-      160deg,
+      var(--bg-grid-angle),
       rgba(255, 255, 255, 0.015),
       rgba(255, 255, 255, 0.015) 1px,
       transparent 1px,
       transparent 6px
     ),
-    linear-gradient(140deg, var(--bg-0) 0%, #030a16 45%, var(--bg-1) 100%);
+    linear-gradient(
+      var(--bg-main-angle),
+      var(--bg-0) 0%,
+      #030a16 45%,
+      var(--bg-1) 100%
+    );
+  background-size:
+    170% 170%,
+    180% 180%,
+    260px 260px,
+    100% 100%;
+  background-position:
+    10% 16%,
+    85% 84%,
+    0 0,
+    0 0;
   background-attachment: fixed;
+  animation: bgDrift 12s ease-in-out infinite alternate;
   padding: clamp(1rem, 2.8vw, 2.2rem);
   max-width: 1200px;
+}
+
+@keyframes bgDrift {
+  0% {
+    --bg-grid-angle: 160deg;
+    --bg-main-angle: 140deg;
+    background-position:
+      10% 16%,
+      85% 84%,
+      0 0,
+      0 0;
+  }
+
+  50% {
+    --bg-grid-angle: 178deg;
+    --bg-main-angle: 152deg;
+    background-position:
+      16% 22%,
+      78% 76%,
+      110px 70px,
+      0 0;
+  }
+
+  100% {
+    --bg-grid-angle: 198deg;
+    --bg-main-angle: 165deg;
+    background-position:
+      22% 14%,
+      72% 68%,
+      220px 150px,
+      0 0;
+  }
 }
 
 main,
@@ -133,16 +196,15 @@ header span {
   border-radius: 10px;
   corner-shape: squircle;
   line-height: 1;
-  display: block;
-  width: fit-content;
 }
 
 section {
-  background: linear-gradient(170deg, var(--surface-0), rgba(4, 10, 19, 0.84));
+  background: linear-gradient(170deg, var(--surface-3), rgba(4, 10, 19, 0.363));
+  /* backdrop-filter: blur(5px); */
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   margin-bottom: 1.3rem;
-  padding: clamp(1rem, 2.4vw, 1.8rem);
+  padding: 5% 10%;
   box-shadow: var(--shadow-card);
   backdrop-filter: blur(6px);
 }
@@ -193,6 +255,11 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
+}
+
+#badge .params {
+  display: block;
+  width: fit-content;
 }
 
 .badge {
@@ -269,6 +336,7 @@ button:focus-visible {
 .banners-container {
   display: grid;
   gap: 0.85rem;
+  padding-right: 3rem;
 }
 
 .banners-container li {
@@ -280,6 +348,7 @@ button:focus-visible {
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   overflow: hidden;
+  margin-block: 8px;
 }
 
 .banner {
@@ -287,13 +356,14 @@ button:focus-visible {
   padding: 0.75rem 1rem;
   display: flex;
   gap: 0.8rem;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .banner img {
   width: 22px;
   height: 22px;
   margin-top: 0.25rem;
+  align-self: flex-start;
 }
 
 .banner h3 {
