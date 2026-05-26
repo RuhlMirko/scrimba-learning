@@ -70,12 +70,8 @@ body {
     sans-serif;
   color: var(--text-1);
   background:
-    radial-gradient(circle at 12% 18%, rgba(28, 88, 170, 0.4), transparent 44%),
-    radial-gradient(
-      circle at 88% 82%,
-      rgba(26, 67, 134, 0.35),
-      transparent 42%
-    ),
+    radial-gradient(circle at 12% 18%, rgba(17, 54, 105, 0.4), transparent 44%),
+    radial-gradient(circle at 88% 82%, rgba(2, 18, 44, 0.35), transparent 42%),
     repeating-linear-gradient(
       var(--bg-grid-angle),
       rgba(255, 255, 255, 0.015),
@@ -167,7 +163,7 @@ h6 {
 
 h1 {
   font-size: clamp(2.25rem, 6vw, 5.2rem);
-  margin-bottom: 0.2em;
+  margin: 5rem 0 0.2em;
   color: var(--text-1);
   text-transform: uppercase;
 }
@@ -266,8 +262,7 @@ header span {
 }
 
 section {
-  background: linear-gradient(170deg, var(--surface-3), rgba(4, 10, 19, 0.363));
-  /* backdrop-filter: blur(5px); */
+  background: linear-gradient(170deg, var(--surface-2), rgba(4, 19, 39, 0.733));
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   margin-bottom: 1.3rem;
@@ -323,6 +318,8 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #badge .params {
@@ -331,7 +328,7 @@ button:focus-visible {
 }
 
 .badge {
-  padding: 0.46rem 0.95rem;
+  padding: 0.36rem 1.2rem 0.5rem;
   border-radius: 999px;
   border: 1px solid rgba(154, 189, 239, 0.34);
   background: rgba(14, 28, 49, 0.85);
@@ -341,6 +338,10 @@ button:focus-visible {
     transform 180ms ease,
     border-color 180ms ease,
     box-shadow 180ms ease;
+
+  &.square {
+    border-radius: 0;
+  }
 }
 
 .badge:hover {
@@ -355,17 +356,17 @@ button:focus-visible {
 }
 
 .red {
-  background: rgba(191, 59, 95, 0.22);
+  background: rgba(189, 39, 39, 0.4);
   color: #ffbfd0;
 }
 
 .yellow {
-  background: rgba(224, 167, 41, 0.24);
+  background: rgba(209, 190, 20, 0.4);
   color: #ffe4a0;
 }
 
 .green {
-  background: rgba(31, 177, 132, 0.23);
+  background: rgba(31, 177, 132, 0.4);
   color: #b9f6e0;
 }
 
@@ -375,17 +376,17 @@ button:focus-visible {
 }
 
 .indigo {
-  background: rgba(53, 107, 209, 0.26);
+  background: rgba(53, 107, 209, 0.5);
   color: #d2e0ff;
 }
 
 .purple {
-  background: rgba(77, 123, 209, 0.26);
+  background: rgba(106, 77, 209, 0.5);
   color: #dbe7ff;
 }
 
 .pink {
-  background: rgba(194, 87, 141, 0.25);
+  background: rgba(194, 87, 141, 0.5);
   color: #ffd2ea;
 }
 
