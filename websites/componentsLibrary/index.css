@@ -671,8 +671,6 @@ button:focus-visible {
   width: max-content;
   max-width: 330px;
   color: #edf6ff;
-  background: linear-gradient(155deg, #132e54, #0b1e37);
-  border: 1px solid rgba(136, 187, 255, 0.5);
   border-radius: 10px;
   padding: 10px 14px;
   position: absolute;
@@ -701,7 +699,10 @@ button:focus-visible {
   left: 14px;
   border-width: 8px;
   border-style: solid;
-  border-color: #0f2748 transparent transparent transparent;
+  border-top-color: inherit;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
 }
 
 .svg-icon {
