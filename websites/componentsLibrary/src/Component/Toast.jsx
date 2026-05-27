@@ -9,22 +9,22 @@ const toastStyles = {
     success: {
         backgroundColor: '#d4edda',
         border: '1px solid #c3e6cb',
-        color: '#155724'
+        color: '#2ba347'
     },
     error: {
         backgroundColor: '#f8d7da',
         border: '1px solid #f5c6cb',
-        color: '#721c24'
+        color: '#df3e4e'
     },
     warning: {
         backgroundColor: '#fff3cd',
         border: '1px solid #ffeeba',
-        color: '#856404'
+        color: '#d1af18'
     },
     info: {
         backgroundColor: '#d1ecf1',
         border: '1px solid #bee5eb',
-        color: '#0c5460'
+        color: '#21b9d4'
     }
 }
 
