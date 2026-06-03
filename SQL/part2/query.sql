@@ -1,8 +1,12 @@
 /*
-	Select the city and average car price
-	Round that car price to a whole number
+	List:
+		- the brand and model of cars
+		- include the name of the seller,
+		- the city they work in
+		- the date of the sale
 	
-	Only show dealerships which have cars
+	Format the sold_date as DD-MM-YYYY using TO_CHAR()
 	
-	Group by dealership city and state
+	Use sold_cars as the left table and join other tables
+		show sold_cars when we have no record of the seller
 */
