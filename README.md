@@ -47,6 +47,36 @@ npm run dev
 
 Some projects may use different scripts (for example, `npm start`). Check that project's `package.json` if needed.
 
+### Vite-based projects (important)
+
+Many projects in this repo are powered by Vite (including several React exercises).
+
+1. Open a terminal in that specific project folder.
+2. Install dependencies (first time only):
+
+```bash
+npm install
+```
+
+3. Start the Vite dev server:
+
+```bash
+npm run dev
+```
+
+4. Open the local URL shown in the terminal (typically `http://localhost:5173`).
+
+If a project uses `npm start` instead, use that script instead of `npm run dev`.
+
+For production-style testing:
+
+```bash
+npm run build
+npm run preview
+```
+
+Note: opening a Vite project's files directly in the browser without running Vite may not work as expected.
+
 ## Why This Repo Exists
 
 - Track learning progress over time
