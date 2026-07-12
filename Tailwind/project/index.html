@@ -1,9 +1,10 @@
 <!--
 YOUR TASKS
-1. Handle the layout of card contents
-2. Round the corners of the blog preview card
-3. Change the border style of the header and footer
-4. Style the newsletter sign up
+1. Add shadow to card (then remove the temporary background colour)
+2. Colour the SVG heart
+3. Add hover effects (image, shadow, SVG heart)
+4. Add some focus and placeholder styling to the newsletter form
+
 -->
 
 <!doctype html>
@@ -15,7 +16,7 @@ YOUR TASKS
   </head>
   <body>
     <header
-      class="bg-slate-700 text-white p-4 text-center border-b-4 border-double"
+      class="bg-slate-700 text-white p-4 text-center border-slate-500 border-b-4 border-double"
     >
       <section>
         <svg
@@ -46,23 +47,24 @@ YOUR TASKS
       <!-- CARD CONTAINER -->
       <section class="w-11/12 mx-auto mb-10">
         <!-- CARD -->
-        <section class="w-80 bg-gray-100 mx-auto rounded-lg overflow-hidden">
+        <section class="w-80 shadow-md hover:shadow-lg mx-auto rounded-lg">
           <img
+            class="rounded-t-lg opacity-80 hover:opacity-100"
             src="img/post_houseplants.jpg"
             alt="Houseplants with Attitudes"
           />
 
           <!-- CARD CONTENT -->
-          <section class="p-4">
+          <section class="p-4 flex flex-col gap-2">
             <!-- CARD HEADER -->
-            <section class="flex items-center">
-              <section class="flex justify-start gap-2 items-center w-full">
+            <section class="flex items-center justify-between">
+              <section class="flex items-center">
                 <img
                   class="w-8 rounded-full"
                   src="img/author_fern.jpg"
                   alt="Fern Greenleaf"
                 />
-                <span class="text-sm text-slate-500">Fern Greenleaf</span>
+                <span class="text-sm text-slate-500 ml-2">Fern Greenleaf</span>
               </section>
               <svg height="20px" viewBox="0 -960 960 960" width="20px">
                 <path
@@ -92,9 +94,10 @@ YOUR TASKS
             <hr class="my-3" />
 
             <!-- CARD FOOTER -->
-            <section>
+            <section class="flex items-center justify-between">
               <span class="text-sm text-slate-500 italic">9 likes</span>
               <svg
+                class="fill-red-200 hover:fill-red-400 cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 height="20px"
                 viewBox="0 -960 960 960"
@@ -115,7 +118,7 @@ YOUR TASKS
       <!--CARD CONTAINER END-->
     </main>
     <footer
-      class="bg-slate-700 text-white p-4 text-center mt-auto border-t-4 border-double"
+      class="bg-slate-700 text-white p-4 text-center mt-auto border-slate-500 border-t-4 border-double"
     >
       <!-- FOOTER CONTENT -->
       <section>
@@ -124,16 +127,14 @@ YOUR TASKS
           Want to get notified when a new blog post is up? Sign up for the
           newsletter and never miss out!
         </p>
-        <form
-          class="my-4 mx-auto rounded-lg flex justify-center items-center overflow-hidden w-full"
-        >
+        <form class="my-4 w-full flex">
           <input
-            class="p-2 w-full text-slate-800"
+            class="p-2 text-slate-800 rounded-l-lg flex-grow placeholder:italic placeholder:pl-2 focus:bg-slate-100"
             type="email"
             placeholder="email@example.com"
           />
           <input
-            class="bg-slate-300 text-slate-800 p-2 font-medium"
+            class="bg-slate-300 text-slate-800 p-2 font-medium rounded-r-lg"
             type="submit"
             value="Sign Up"
           />
