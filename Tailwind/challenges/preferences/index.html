@@ -5,21 +5,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="bg-amber-100 flex flex-col items-center">
-        <main class="">
-            <h1>Leaf &amp; Brew Box</h1>
-            <h2>Preferences</h2>
+    <body class="bg-amber-100 flex flex-col">
+        <main class="px-4 py-6">
+            <h1 class="text-amber-900 font-bold text-6xl font-serif">Leaf &amp; Brew Box</h1>
+            <h2 class="text-amber-800 font-bold text-2xl">Preferences</h2>
             
-            <form>
+            <form class="bg-white p-5 relative flex flex-col flex-wrap justify-center items-center`">
                 
                 <!-- SUBSCRIPTION -->
-                <fieldset>
-                    <legend>Subscription</legend>
+                <fieldset class="grid grid-cols-2 gap-6">
+                    <legend class="text-amber-700 font-bold">Subscription</legend>
                     
                     <!-- SUBSCRIPTION TIER -->
-                    <section>
-                        <label>Subscription Tier</label>
-                        <select>
+                    <section class="flex flex-col mb-12">
+                        <label class="font-bold">Subscription Tier</label>
+                        <select class="border-2 border-amber-100 rounded-md">
                             <option>Basic (1 tea per month)</option>
                             <option>Standard (3 teas per month)</option>
                             <option>Deluxe (5 teas per month)</option>
@@ -27,8 +27,8 @@
                     </section>
                     
                     <!-- TASTE PREFERENCE -->
-                    <section>
-                        <p>Taste Preference</p>
+                    <section class="flex flex-col mb-12">
+                        <p class="font-bold">Taste Preference</p>
                         <section>
                             <section>
                                 <input type="checkbox" id="fruity" name="fruity"/>
@@ -47,7 +47,7 @@
                     
                     <!-- LOOSE OR BAGGED -->
                     <section>
-                        <p>Loose Leaf or Bagged?</p>
+                        <p class="font-bold">Loose Leaf or Bagged?</p>
                         <section>
                             <section>
                                 <input type="radio" id="loose" name="tea-preference"/>
@@ -65,69 +65,69 @@
                     </section>
                     
                     <!-- DIETARY RESTRICTIONS -->
-                    <section>
+                    <section class="font-bold flex flex-col mb-12">
                         <label for="delivery_instructions">Dietary Restrictions</label>
-                        <textarea id="delivery_instructions"></textarea>
+                        <textarea id="delivery_instructions" class="border-2 border-amber-100 p-2"></textarea>
                     </section>
                     
                 </fieldset>
                 
                 <!-- CUSTOMER DETAILS -->
-                <fieldset>
-                    <legend>Details</legend>
+                <fieldset class="relative grid grid-cols-2 gap-6">
+                    <legend class="text-amber-700 font-bold">Details</legend>
                     
                     <!-- NAME -->
-                    <section>
-                        <label>Full Name</label>
-                        <input type="text" value="Earl Greyson"/>
+                    <section class="flex flex-col">
+                        <label class="font-bold ">Full Name</label>
+                        <input class="border-2 border-amber-100" type="text" value="Earl Greyson"/>
                     </section>
                     
                     <!-- EMAIL -->
-                    <section>
+                    <section class="flex flex-col">
                         <label>Email</label>
-                        <input type="email" value="earlgreyson@tealovers.com"/>
+                        <input class="border-2 border-amber-100" type="email" value="earlgreyson@tealovers.com"/>
                     </section>
                     
                     <!-- DELIVERY -->
                     <section>
-                        <h3>Delivery Address</h3>
-                        <section>
+                        <h3 class="font-bold">Delivery Address</h3>
+                        <section class="border-2 border-amber-100">
                             <p>12 Brewster Lane</p>
                             <p>Steepville</p>
                             <p>TE 67894</p>
-                            <a href="#">Change address</a>
+                            <a href="#" class="text-amber-700 underline">Change address</a>
                         </section>
                     </section>
                     
                     <!-- PAYMENT -->
                     <section>
-                        <h3>Payment Method</h3>
-                        <section>
-                            <section>
+                        <h3 class="font-bold">Payment Method</h3>
+                        <section class="border-2 border-amber-100 p-2">
+                            <section class="flex justify-between">
                                 <p>....8523</p>
-                                <section>
-                                    <img src="img/logo_visa.png" alt="visa"/>
-                                    <img src="img/logo_mastercard.png" alt="mastercard"/>
+                                <section class="flex">
+                                    <img class="h-6" src="img/logo_visa.png" alt="visa"/>
+                                    <img class="h-6 opacity-20" src="img/logo_mastercard.png" alt="mastercard"/>
                                 </section>
                             </section>
-                            <a href="#">Change payment method</a>
+                            <a href="#" class="text-amber-700 underline">Change payment method</a>
                         </section>
                     </section>
                     
                     <!-- DELIVERY ICON -->
-                    <svg xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"><path d="M240-160q-50 0-85-35t-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T280-280q0-17-11.5-28.5T240-320q-17 0-28.5 11.5T200-280q0 17 11.5 28.5T240-240Zm480 0q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240Zm-40-200h170l-90-120h-80v120Z"/></svg>
+                    <svg class="absolute -top-10 right-0 fill-amber-800" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 -960 960 960" width="50px"><path d="M240-160q-50 0-85-35t-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T280-280q0-17-11.5-28.5T240-320q-17 0-28.5 11.5T200-280q0 17 11.5 28.5T240-240Zm480 0q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240Zm-40-200h170l-90-120h-80v120Z"/></svg>
                 </fieldset>
                 
                 <!-- SAVE BUTTON -->
-                <input type="submit" value="Save Preferences"/>
+                <input class="mt-6 w-full bg-amber-800 text-white font-bold py-4 rounded-md" type="submit" value="Save Preferences"/>
                 
                 <!-- FORM ICON -->
-                <svg xmlns="http://www.w3.org/2000/svg" height="100px" viewBox="0 -960 960 960" width="100px"><path d="M160-120v-80h640v80H160Zm560-520h80v-120h-80v120ZM320-280q-66 0-113-47t-47-113v-400h200v96l-72 58q-2 2-8 16v170q0 8 6 14t14 6h160q8 0 14-6t6-14v-170q0-2-8-16l-72-58v-96h400q33 0 56.5 23.5T880-760v120q0 33-23.5 56.5T800-560h-80v120q0 66-47 113t-113 47H320Z"/></svg>
+                <svg class="absolute right-0 -top-12 fill-amber-800" xmlns="http://www.w3.org/2000/svg" height="100px" viewBox="0 -960 960 960" width="100px"><path d="M160-120v-80h640v80H160Zm560-520h80v-120h-80v120ZM320-280q-66 0-113-47t-47-113v-400h200v96l-72 58q-2 2-8 16v170q0 8 6 14t14 6h160q8 0 14-6t6-14v-170q0-2-8-16l-72-58v-96h400q33 0 56.5 23.5T880-760v120q0 33-23.5 56.5T800-560h-80v120q0 66-47 113t-113 47H320Z"/></svg>
             
             </main>
         </form>
-        <footer>
-            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M160-120v-80h640v80H160Zm160-160q-66 0-113-47t-47-113v-400h640q33 0 56.5 23.5T880-760v120q0 33-23.5 56.5T800-560h-80v120q0 66-47 113t-113 47H320Zm0-480h320-400 80Zm400 120h80v-120h-80v120ZM560-360q33 0 56.5-23.5T640-440v-320H400v16l72 58q2 2 8 16v170q0 8-6 14t-14 6H300q-8 0-14-6t-6-14v-170q0-2 8-16l72-58v-16H240v320q0 33 23.5 56.5T320-360h240ZM360-760h40-40Z"/></svg>
+        <footer class="pb-6 self-center">
+            <svg class="fill-amber-700" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M160-120v-80h640v80H160Zm160-160q-66 0-113-47t-47-113v-400h640q33 0 56.5 23.5T880-760v120q0 33-23.5 56.5T800-560h-80v120q0 66-47 113t-113 47H320Zm0-480h320-400 80Zm400 120h80v-120h-80v120ZM560-360q33 0 56.5-23.5T640-440v-320H400v16l72 58q2 2 8 16v170q0 8-6 14t-14 6H300q-8 0-14-6t-6-14v-170q0-2 8-16l72-58v-16H240v320q0 33 23.5 56.5T320-360h240ZM360-760h40-40Z"/></svg>
         </footer>
     </body>
 </html>
