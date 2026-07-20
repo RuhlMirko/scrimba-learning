@@ -1,5 +1,22 @@
-# Getting Started
-Install the dependencies and run the project
+# Unit Converter
+
+A simple web application for converting between metric and imperial units.
+
+## Features
+
+- **Length Conversion**: Convert between Meters and Feet
+- **Volume Conversion**: Convert between Liters and Gallons
+- **Mass Conversion**: Convert between Kilograms and Pounds
+
+## How It Works
+
+1. Enter a number in the input field
+2. Click the "Convert" button
+3. View the conversion results for all three unit types
+
+## Getting Started
+
+Install the dependencies and run the project:
 ```
 npm install
 npm start
