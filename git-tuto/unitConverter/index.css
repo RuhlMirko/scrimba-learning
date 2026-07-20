@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #1f2937;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: rgb(229, 217, 243);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+#auto-margin {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 6px;
+  /* #6943ff */
+  background: linear-gradient(#6943ff, #7c2be6);
+  width: 100%;
+  height: 50vh;
+}
+header h1 {
+  margin-top: 60px;
+}
+header input {
+  min-width: 10rem;
+  width: auto;
+  height: 9rem;
+  background-color: inherit;
+  border: 2px solid #ffffff48;
+  border-radius: 5px;
+  font-size: 5rem;
+  color: white;
+  text-align: center;
+  field-sizing: content;
+}
+header button {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2em;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+main div {
+  background-color: #273549;
+  margin: 40px 60px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 5px;
+}
+main div p {
+  color: white;
+}
+footer {
+  height: 6vh;
+  background-color: #121212;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  margin-top: 60px;
+}
+footer a {
+  color: #6943ff;
+  font-style: italic;
+  font-size: 2rem;
+}
